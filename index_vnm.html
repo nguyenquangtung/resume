@@ -23,6 +23,29 @@
 
   <!-- Custom styles for this template -->
   <link href="css/resume.css" rel="stylesheet" />
+    <style>
+      .toggle-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      .toggle-item {
+        display: none;
+      }
+      .toggle-button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+      }
+      .toggle-arrow::after {
+        content: "\25B6"; /* Mũi tên chỉ xuống */
+        display: inline-block;
+        margin-right: 5px;
+      }
+      .toggle-arrow.open::after {
+        transform: rotate(90deg); /* Xoay mũi tên khi mở rộng */
+      }
+    </style>
 </head>
 <body id="page-top">
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
@@ -87,7 +110,7 @@
         </div>
         <div class="subheading mb-4">
           ĐỊA CHỈ:
-          <a href="">TP.HỒ CHÍ MINH</a>
+          <a href="">THỦ ĐỨC - TP.HỒ CHÍ MINH</a>
         </div>
         <!-- <p class="lead mb-2 "><strong>Công việc mong muốn:</strong> PHP (Laravel framework)</p>
         <p class="lead mb-4 "><strong>Vị trí:</strong> Junior</p> -->
@@ -104,6 +127,12 @@
           </a>
           <a target="_blank" href="https://www.linkedin.com/in/tungnguyen73/">
             <i class="fab fa-linkedin"></i>
+          </a>
+          <a target="_blank" href="https://www.youtube.com/@tungquangnguyen731">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a target="_blank" href="https://www.facebook.com/nqt7301/">
+            <i class="fab fa-facebook"></i>
           </a>
         </div>
 
@@ -569,7 +598,7 @@ e logo" title="Python" height="25" /></span>
             <div class="resume-content mr-auto">
               <h5 class="mb-1">
                 <a target="_blank" style="color: #0a55a5; font-size: 30px">
-                  HUMAN SKELETON ESTIMASTINGPROJECT
+                  HUMAN SKELETON ESTIMASTING PROJECT
                 </a>
                 &emsp; (Digital Image processing)
               </h5>
@@ -902,34 +931,37 @@ e logo" title="Python" height="25" /></span>
                   <a target="_blank" href="https://www.freecodecamp.org/certification/NguyenQuangTung/foundational-c-sharp-with-microsoft">Foundational C# with Microsoft - freeCodeCamp.</a>
                 </li>
                 <li>
-                  <a target="_blank" href="https://drive.google.com/file/d/1oqvtYnX-81nNHIIMRZUKllRUPUNqHT7E/view?usp=sharing">Big Data and Machine Learning Fundamentals - Google Cloud ACE.</a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://drive.google.com/file/d/1EPAkpCCNWCe14IserW7-uRTDiOZIPY5m/view?usp=sharing">Fundamentas Core infracstructure - Google Cloud ACE.</a>
-                </li>
-                <li>
                   <a target="_blank" href="https://verified.sertifier.com/en/verify/32138525036931/?ref=email">Software development with Agile Scrum - Axon Active.</a>
                 </li>
-                <li>
-                  <a target="_blank" href="https://www.hackerrank.com/certificates/09495e205c27">SQL (Basic) Certificate - Hacker Rank.</a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://www.hackerrank.com/certificates/e86c5942eb70">SQL (Intermediate) Certificate - Hacker Rank.</a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://www.hackerrank.com/certificates/6a96d048f9dc">Python (Basic) Certificate - Hacker Rank.</a>
-                </li>
+
                 <li>
                   <a target="_blank" href="https://drive.google.com/file/d/1zjiT1vctpta1w0QFWT_MZphgPBmSs73h/view?usp=sharing">Teaching Assistant Skill - HCMc UTE.</a>
                 </li>
-                <!-- <li>
-                  <a target="_blank" href="https://www.hackerrank.com/certificates/59d095e60799">SQL</a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://www.hackerrank.com/certificates/59d095e60799">JavaScript</a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://www.hackerrank.com/certificates/59d095e60799">React</a> -->
+                  <li>
+                    <button class="toggle-button toggle-arrow" onclick="toggleItem(0)">Google Cloud ACE</button>
+                    <ul class="toggle-item">
+                      <li>
+                        <a target="_blank" href="https://drive.google.com/file/d/1oqvtYnX-81nNHIIMRZUKllRUPUNqHT7E/view?usp=sharing">Big Data and Machine Learning Fundamentals - Google Cloud ACE.</a>
+                      </li>
+                      <li>
+                        <a target="_blank" href="https://drive.google.com/file/d/1EPAkpCCNWCe14IserW7-uRTDiOZIPY5m/view?usp=sharing">Fundamentas Core infracstructure - Google Cloud ACE.</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <button class="toggle-button toggle-arrow" onclick="toggleItem(1)">Hacker Rank</button>
+                    <ul class="toggle-item">
+                      <li>
+                        <a target="_blank" href="https://www.hackerrank.com/certificates/09495e205c27">SQL (Basic) Certificate - Hacker Rank.</a>
+                      </li>
+                      <li>
+                        <a target="_blank" href="https://www.hackerrank.com/certificates/e86c5942eb70">SQL (Intermediate) Certificate - Hacker Rank.</a>
+                      </li>
+                      <li>
+                        <a target="_blank" href="https://www.hackerrank.com/certificates/6a96d048f9dc">Python (Basic) Certificate - Hacker Rank.</a>
+                      </li>
+                    </ul>
+                  </li>
                 </li>
               </ul>
             </div>
@@ -994,6 +1026,19 @@ e logo" title="Python" height="25" /></span>
 
   <!-- Custom scripts for this template -->
   <script src="js/resume.min.js"></script>
+  <script>
+    function toggleItem(index) {
+      var item = document.querySelectorAll('.toggle-item')[index];
+      var arrow = document.querySelectorAll('.toggle-arrow')[index];
+      if (item.style.display === 'none' || item.style.display === '') {
+        item.style.display = 'block';
+        arrow.classList.add('open');
+      } else {
+        item.style.display = 'none';
+        arrow.classList.remove('open');
+      }
+    }
+  </script>
 </body>
 
 </html>
