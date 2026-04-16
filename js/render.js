@@ -258,6 +258,50 @@
     html += '</ul></div>\n';
     setHTML("education-content", html);
   }
+  /* ── DARK MODE ────────────────────────────────────────── */
+  function initDarkMode(lang) {
+    // Inject toggle button into sidebar (before lang-switcher)
+    var langSwitcher = document.querySelector(".lang-switcher");
+    if (langSwitcher && !document.querySelector(".dark-mode-toggle")) {
+      var btn = document.createElement("button");
+      btn.className = "dark-mode-toggle";
+      btn.setAttribute("id", "darkModeToggle");
+      btn.setAttribute("aria-label", "Toggle dark mode");
+      langSwitcher.parentNode.insertBefore(btn, langSwitcher);
+    }
+
+    // Apply saved preference immediately
+    var saved = localStorage.getItem("resumeTheme");
+    if (saved === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+
+    updateDarkModeButton(lang);
+
+    // Toggle handler (delegated so it works if button is re-created)
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".dark-mode-toggle")) return;
+      var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      if (isDark) {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("resumeTheme", "light");
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("resumeTheme", "dark");
+      }
+      updateDarkModeButton(lang);
+    });
+  }
+
+  function updateDarkModeButton(lang) {
+    var btn = document.getElementById("darkModeToggle");
+    if (!btn) return;
+    var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    var isVi   = lang === "vi";
+    btn.innerHTML = isDark
+      ? '<span class="dm-icon">☀️</span>' + (isVi ? "Sáng" : "Light mode")
+      : '<span class="dm-icon">🌙</span>' + (isVi ? "Tối" : "Dark mode");
+  }
 
   /* ════════════════════════════════════════════════════════
      MAIN ENTRY POINT
@@ -272,14 +316,13 @@
     if (!data) {
       console.error("renderResume: RESUME_DATA not found. Make sure data.js is loaded first.");
       return;
-    }
-
-    renderSidebar(data, lang);
+    }    renderSidebar(data, lang);
     renderAbout(data, lang);
     renderSkills(data, lang);
     renderProjects(data, lang);
     renderExperience(data, lang);
     renderEducation(data, lang);
+    initDarkMode(lang);
 
     // Re-run scroll-reveal observer after DOM is populated
     setTimeout(function () {
