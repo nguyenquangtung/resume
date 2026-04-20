@@ -268,11 +268,9 @@
       btn.setAttribute("id", "darkModeToggle");
       btn.setAttribute("aria-label", "Toggle dark mode");
       langSwitcher.parentNode.insertBefore(btn, langSwitcher);
-    }
-
-    // Apply saved preference immediately
+    }    // Apply saved preference immediately (default = dark)
     var saved = localStorage.getItem("resumeTheme");
-    if (saved === "dark") {
+    if (saved !== "light") {
       document.documentElement.setAttribute("data-theme", "dark");
     }
 
