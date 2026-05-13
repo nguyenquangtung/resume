@@ -111,14 +111,15 @@
 
     setHTML("about-content", html);
   }
-
   /* ── SKILLS ───────────────────────────────────────────── */
   function renderSkills(data, lang) {
     var isVi = lang === "vi";
-    var html = '<h3 class="mb-0">' + (isVi ? "Kỹ năng" : "Skills") + '</h3>\n';
+    var html = '<h3 class="mb-0">' + (isVi ? "Kỹ năng" : "Skills") + '</h3>\n'
+      + '<div class="skills-grid">\n';
 
     data.skills.forEach(function (group) {
       var catName = t(group.category, lang);
+      html += '<div class="skills-group">\n';
       html += '<div class="skills-category-title">' + catName + '</div>\n';
 
       // Badges
@@ -128,9 +129,7 @@
           html += '  <img src="' + badgeUrl(b) + '" alt="' + b.label + '" title="' + b.label + '" height="26" />\n';
         });
         html += '</div>\n';
-      }
-
-      // Skill list items
+      }      // Skill list items
       html += '<ul class="skills-list mb-2">\n';
       group.items.forEach(function (item) {
         var nameHtml = item.name ? '<strong>' + item.name + ':</strong> ' : '';
@@ -138,15 +137,18 @@
           + '<span>' + nameHtml + t(item.desc, lang) + '</span></li>\n';
       });
       html += '</ul>\n';
+      html += '</div>\n'; // .skills-group
     });
 
+    html += '</div>\n'; // .skills-grid
     setHTML("skills-content", html);
   }
 
   /* ── PROJECTS ─────────────────────────────────────────── */
   function renderProjects(data, lang) {
     var isVi = lang === "vi";
-    var html = '<h3 class="mb-0">' + (isVi ? "Dự án" : "Projects") + '</h3>\n';
+    var html = '<h3 class="mb-0">' + (isVi ? "Dự án" : "Projects") + '</h3>\n'
+      + '<div class="projects-grid">\n';
 
     data.projects.forEach(function (proj) {
       var linksHtml = proj.links.map(function (lnk) {
@@ -163,14 +165,13 @@
         '    </div>\n' +
         '    <span class="project-date">' + t(proj.date, lang) + '</span>\n' +
         '  </div>\n' +
-        '  <div class="project-links">\n            ' + linksHtml + '\n          </div>\n' +
-        '  <p class="project-desc">' + t(proj.desc, lang) + '</p>\n' +
+        '  <div class="project-links">\n            ' + linksHtml + '\n          </div>\n' +        '  <p class="project-desc">' + t(proj.desc, lang) + '</p>\n' +
         '</div>\n';
     });
 
+    html += '</div>\n'; // .projects-grid
     setHTML("projects-content", html);
   }
-
   /* ── EXPERIENCE ───────────────────────────────────────── */
   function renderExperience(data, lang) {
     var isVi = lang === "vi";
@@ -185,6 +186,21 @@
           + t(exp.evalLabel, lang) + '</a>'
         : '';
 
+      // Sub-items list (bullet points + optional video link)
+      var itemsHtml = '';
+      if (exp.items && exp.items.length > 0) {
+        itemsHtml += '<ul class="exp-items">\n';
+        exp.items.forEach(function (item) {
+          var videoBtn = item.videoUrl
+            ? ' <a class="exp-video-link" target="_blank" href="' + item.videoUrl + '">'
+              + '<i class="fab fa-youtube"></i> ' + (isVi ? 'Xem demo' : 'Watch demo') + '</a>'
+            : '';
+          itemsHtml += '  <li><span class="exp-item-dot"></span><span class="exp-item-text">'
+            + t(item.text, lang) + videoBtn + '</span></li>\n';
+        });
+        itemsHtml += '</ul>\n';
+      }
+
       html +=
         '  <div class="exp-item fade-in-up">\n' +
         '    <div class="exp-dot"></div>\n' +
@@ -194,6 +210,7 @@
         '      <div class="exp-position">' + t(exp.position, lang) + evalHtml + '</div>\n' +
         '      <span class="exp-date">' + t(exp.date, lang) + '</span>\n' +
         '      <p class="exp-desc">' + t(exp.desc, lang) + '</p>\n' +
+        itemsHtml +
         '    </div>\n' +
         '  </div>\n';
     });
@@ -201,11 +218,11 @@
     html += '</div>\n';
     setHTML("experience-content", html);
   }
-
   /* ── EDUCATION ────────────────────────────────────────── */
   function renderEducation(data, lang) {
     var isVi = lang === "vi";
-    var html = '<h3 class="mb-0">' + (isVi ? "Học vấn" : "Education") + '</h3>\n';
+    var html = '<h3 class="mb-0">' + (isVi ? "Học vấn" : "Education") + '</h3>\n'
+      + '<div class="edu-grid">\n';
 
     data.education.forEach(function (edu) {
       html +=
@@ -218,7 +235,7 @@
         '</div>\n';
     });
 
-    /* ── Competitions ── */
+    html += '</div>\n'; // .edu-grid
     html += '<h3 class="mb-0 mt-5">' + (isVi ? "Cuộc thi" : "Competitions") + '</h3>\n';
 
     data.competitions.forEach(function (comp) {

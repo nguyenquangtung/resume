@@ -42,6 +42,14 @@ body {
   body { padding-top: 0; padding-left: 17rem; }
 }
 
+@media (min-width: 1400px) {
+  body { padding-left: 19rem; }
+}
+
+@media (min-width: 1920px) {
+  body { padding-left: 22rem; }
+}
+
 /* ===================== TYPOGRAPHY ===================== */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Saira Extra Condensed', 'Inter', sans-serif;
@@ -212,10 +220,21 @@ a:hover, a:focus { color: var(--primary-dark); text-decoration: none; }
   }
 }
 
+@media (min-width: 1400px) {
+  #sideNav { width: 19rem; }
+  #sideNav .navbar-nav .nav-item .nav-link { font-size: 0.8rem; padding: 0.7rem 1.4rem; }
+}
+
+@media (min-width: 1920px) {
+  #sideNav { width: 22rem; }
+  #sideNav .navbar-nav .nav-item .nav-link { font-size: 0.88rem; padding: 0.8rem 1.6rem; }
+  #sideNav .navbar-brand .img-profile { max-width: 13rem; max-height: 13rem; }
+}
+
 /* ===================== SECTIONS ===================== */
 section.resume-section {
   padding: 5rem 3rem !important;
-  max-width: 75rem;
+  max-width: 80rem;
   position: relative;
 }
 
@@ -228,6 +247,14 @@ hr.m-0 { border-color: rgba(99,102,241,0.1); }
 
 @media (min-width: 992px) {
   section.resume-section { padding: 4rem 4rem !important; }
+}
+
+@media (min-width: 1400px) {
+  section.resume-section { padding: 4.5rem 5rem !important; max-width: 90rem; }
+}
+
+@media (min-width: 1920px) {
+  section.resume-section { padding: 5rem 6rem !important; max-width: 110rem; }
 }
 
 /* Section heading */
@@ -468,6 +495,8 @@ social-icons a:hover {
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card::before {
@@ -563,9 +592,8 @@ social-icons a:hover {
   color: #64748b;
   line-height: 1.7;
   margin-bottom: 0;
+  flex: 1;
 }
-
-/* ===================== EXPERIENCE SECTION ===================== */
 #experience { background: #fff; }
 
 .experience-timeline {
@@ -659,6 +687,67 @@ social-icons a:hover {
   color: #64748b;
   line-height: 1.7;
   margin: 0;
+}
+
+/* Experience sub-items */
+.exp-items {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.exp-items li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.exp-item-dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent, #4f46e5);
+  margin-top: 7px;
+  opacity: 0.6;
+}
+
+.exp-item-text {
+  flex: 1;
+}
+
+.exp-video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #ef4444;
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.2);
+  border-radius: 20px;
+  padding: 1px 9px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.exp-video-link i {
+  font-size: 0.8rem;
+}
+
+.exp-video-link:hover {
+  background: rgba(239,68,68,0.16);
+  color: #dc2626;
+  transform: scale(1.04);
+  text-decoration: none;
 }
 
 /* ===================== EDUCATION SECTION ===================== */
@@ -993,6 +1082,16 @@ social-icons a:hover {
 
 [data-theme="dark"] .exp-company { color: #e2e8f0; }
 [data-theme="dark"] .exp-desc   { color: #64748b; }
+[data-theme="dark"] .exp-items li { color: #94a3b8; }
+[data-theme="dark"] .exp-video-link {
+  color: #f87171;
+  background: rgba(239,68,68,0.12);
+  border-color: rgba(239,68,68,0.25);
+}
+[data-theme="dark"] .exp-video-link:hover {
+  background: rgba(239,68,68,0.2);
+  color: #fca5a5;
+}
 
 /* ── Education ── */
 [data-theme="dark"] #education {
@@ -1056,4 +1155,94 @@ social-icons a:hover {
   .project-card-header { flex-direction: column; }
   .scroll-down-arrow { display: none; }
   .edu-card, .competition-card { flex-direction: column; }
+}
+
+/* ── Large screens (≥1400px) ── */
+@media (min-width: 1400px) {
+  /* Projects: 2-column grid — stretch để cùng chiều cao */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+  .projects-grid .project-card {
+    margin-bottom: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .projects-grid .project-card .project-desc {
+    flex: 1;
+  }
+
+  /* Skills: 2-column grid */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 2.5rem;
+    align-items: start;
+  }
+
+  /* Education: 2-column grid — stretch để cùng chiều cao */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    align-items: stretch;
+  }
+  .edu-grid .edu-card {
+    margin-bottom: 0;
+    height: 100%;
+    align-items: center;
+  }
+
+  /* Experience: wider cards */
+  .exp-card { padding: 1.4rem 1.8rem; }
+  .exp-company { font-size: 1.2rem; }
+  .exp-desc { font-size: 0.92rem; }
+
+  /* Certifications: 2-column */
+  .cert-list {
+    columns: 2;
+    column-gap: 2rem;
+  }
+  .cert-list li, .toggle-item {
+    break-inside: avoid;
+  }
+
+  /* General font scaling */
+  .project-title { font-size: 1.2rem; }
+  .project-desc { font-size: 0.93rem; }
+}
+
+/* ── Extra-large screens (≥1920px) ── */
+@media (min-width: 1920px) {
+  /* Projects: 3-column grid — vẫn giữ stretch */
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+
+  /* Skills: still 2-col but wider */
+  .skills-category-title { font-size: 1rem; }
+  .skills-list li { font-size: 0.92rem; }
+
+  /* Experience timeline wider */
+  .experience-timeline { padding-left: 2.5rem; }
+  .exp-card { padding: 1.6rem 2rem; }
+  .exp-company { font-size: 1.3rem; }
+  .exp-desc { font-size: 0.95rem; }
+  .exp-items li { font-size: 0.9rem; }
+
+  /* Certifications: 3-column */
+  .cert-list { columns: 3; }
+
+  /* About section bio text */
+  p.lead { font-size: 1.15rem; }
+
+  /* Project cards */
+  .project-card { padding: 1.8rem; }
+  .project-title { font-size: 1.3rem; }
+  .project-desc { font-size: 0.95rem; }
 }

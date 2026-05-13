@@ -299,30 +299,75 @@ var RESUME_DATA = {
         en: "Full-time AI/CV Engineer. Working on computer vision projects, R&D tasks, and integrating AI solutions into production systems.",
         vi: "Kỹ sư AI/CV toàn thời gian. Tham gia các dự án thị giác máy tính, R&D và tích hợp giải pháp AI vào hệ thống thực tế.",
       },
+      items: [
+        {
+          text: {
+            en: "Develop computer vision pipelines for inspection, detection, and automation use cases.",
+            vi: "Phát triển pipeline thị giác máy tính cho các bài toán kiểm tra, phát hiện và tự động hóa.",
+          },
+        },
+        {
+          text: {
+            en: "Research, evaluate, and integrate AI models into practical production workflows.",
+            vi: "Nghiên cứu, đánh giá và tích hợp mô hình AI vào quy trình vận hành thực tế.",
+          },
+        },
+      ],
     },
     {
       company: { en: "SVN Automation (Sophic Automation)",    vi: "Công ty SVN Automation (Sophic Automation)" },
       infoUrl: "https://svnautomation.com/",
       position: { en: "AI / Computer Vision Intern",          vi: "Thực tập sinh AI / Computer Vision" },
       date:     { en: "08/2023 — 12/2023",                    vi: "08/2023 — 12/2023" },
-      evalUrl:  "https://drive.google.com/file/d/1vd0iMz5V-0zz1_WxLj_czNVBnpw956sM/view?usp=sharing",
+      evalUrl:  "https://drive.google.com/file/d/10ixtqBD4EhLYSs70Dba8zXHACazA1ci8/view?usp=sharing",
       evalLabel:{ en: "evaluation form", vi: "phiếu đánh giá" },
       desc: {
         en: "Computer vision intern in the R&D Department. Researched AI Computer Vision, Embedded Software, and Software Applications. Contributed to real projects controlling robot arms.",
         vi: "Thực tập sinh thị giác máy tính tại phòng R&D. Nghiên cứu AI Computer Vision, Embedded Software, Software Application. Tham gia dự án thực tế điều khiển cánh tay robot.",
       },
+      items: [
+        {
+          text: {
+            en: "Built an AI Chess system combining YOLOv8, board-state recognition, Arduino, and robot-arm control.",
+            vi: "Xây dựng hệ thống AI Cờ Vua kết hợp YOLOv8, nhận diện trạng thái bàn cờ, Arduino và điều khiển cánh tay robot.",
+          },
+          videoUrl: "https://youtu.be/7EVB89qOXaM?si=-G3MY66mkipP_fBe",
+        },
+        {
+          text: {
+            en: "Extended the robot-arm interaction workflow for AI Chinese Chess.",
+            vi: "Mở rộng quy trình tương tác với cánh tay robot cho bài toán AI Cờ Tướng.",
+          },
+          videoUrl: "https://youtube.com/shorts/JhGkF8fEN1g?si=yWoF7oWUL2kUH6PH",
+        },
+      ],
     },
     {
       company: { en: "TMA Solutions Company",                 vi: "Công ty TMA Solutions" },
       infoUrl: "https://www.tmasolutions.com/",
       position: { en: "AI / Computer Vision Intern",          vi: "Thực tập sinh AI / Computer Vision" },
       date:     { en: "03/2023 — 06/2023",                    vi: "03/2023 — 06/2023" },
-      evalUrl:  "https://drive.google.com/file/d/1bUV5jV6N-Jl9px__51hLIMi3fSIY_OUH/view?usp=sharing",
+      evalUrl:  "https://drive.google.com/file/d/10sZKGm3iV_7flqw0F2Fyjcfza0uGQcB_/view?usp=sharing",
       evalLabel:{ en: "evaluation form", vi: "phiếu đánh giá" },
       desc: {
         en: "Intern in the \"Artificial Intelligence Innovation\" room. Researched SOTA models (YOLO), contributed to real projects, and developed self-directed research and problem-solving skills.",
         vi: "Thực tập tại phòng \"Artificial Intelligence Innovation\". Nghiên cứu mô hình SOTA (YOLO), tham gia dự án thực tế, rèn luyện kỹ năng tự học và giải quyết vấn đề.",
       },
+      items: [
+        {
+          text: {
+            en: "Researched YOLO-based computer vision models and evaluated practical application scenarios.",
+            vi: "Nghiên cứu các mô hình thị giác máy tính dựa trên YOLO và đánh giá khả năng áp dụng thực tế.",
+          },
+        },
+        {
+          text: {
+            en: "Developed a driver drowsiness detection prototype using CNN, OpenCV, Keras, and TensorFlow.",
+            vi: "Phát triển prototype phát hiện tài xế buồn ngủ sử dụng CNN, OpenCV, Keras và TensorFlow.",
+          },
+          videoUrl: "https://youtu.be/X8ZFH_fZsIo",
+        },
+      ],
     },
     {
       company: { en: "Faculty of High Quality Training — HCMc UTE", vi: "Khoa Đào tạo Chất lượng cao — ĐH SPKT TP.HCM" },
@@ -372,7 +417,7 @@ var RESUME_DATA = {
         en: "<strong>Top 2</strong> Vietnam Student Ranking &nbsp;·&nbsp; <strong>Top 10%</strong> Asia Pacific Ranking",
         vi: "<strong>Top 2</strong> Bảng xếp hạng sinh viên Việt Nam &nbsp;·&nbsp; <strong>Top 10%</strong> Bảng xếp hạng Châu Á - Thái Bình Dương",
       },
-      certUrl:   "https://drive.google.com/file/d/1QmdfOxvJBmb9indzbbTK3kPoDEkYmWqS/view?usp=sharing",
+      certUrl:   "https://drive.google.com/file/d/1-D21KijYI-LvO0kebTCNKKw5swgm8nZv/view?usp=sharing",
       certLabel: { en: "View Certificate →", vi: "Xem chứng chỉ →" },
       date:      "03/2023",
     },
@@ -386,7 +431,10 @@ var RESUME_DATA = {
     },
     {
       label: "Foundational C# with Microsoft — freeCodeCamp",
-      url:   "https://www.freecodecamp.org/certification/NguyenQuangTung/foundational-c-sharp-with-microsoft",
+      // url:   "https://www.freecodecamp.org/certification/NguyenQuangTung/foundational-c-sharp-with-microsoft",
+      url:   "https://drive.google.com/file/d/10A0vouhadfdGOZEwGZuaQATn6Yhg464p/view?usp=sharing",
+    
+      
     },
     {
       label: "Software Development with Agile Scrum — Axon Active",
@@ -394,13 +442,13 @@ var RESUME_DATA = {
     },
     {
       label: { en: "Teaching Assistant Skill — HCMc UTE", vi: "Kỹ năng Trợ giảng — ĐH SPKT TP.HCM" },
-      url:   "https://drive.google.com/file/d/1zjiT1vctpta1w0QFWT_MZphgPBmSs73h/view?usp=sharing",
+      url:   "https://drive.google.com/file/d/1-XnNRhMQIyw2WXsKHFrmx3nA4GVBzLlq/view?usp=sharing",
     },
     {
       label: "Google Cloud ACE",
       children: [
-        { label: "Big Data and Machine Learning Fundamentals — Google Cloud", url: "https://drive.google.com/file/d/1oqvtYnX-81nNHIIMRZUKllRUPUNqHT7E/view?usp=sharing" },
-        { label: "Fundamentals Core Infrastructure — Google Cloud",          url: "https://drive.google.com/file/d/1EPAkpCCNWCe14IserW7-uRTDiOZIPY5m/view?usp=sharing" },
+        { label: "Big Data and Machine Learning Fundamentals — Google Cloud", url: "https://drive.google.com/file/d/1-DZMMI5XhMPZkWWStXdKohTDCcCMX-WA/view?usp=sharing" },
+        { label: "Fundamentals Core Infrastructure — Google Cloud",          url: "https://drive.google.com/file/d/1-KUfymY2QkvNtRDoFqfUp8_32n_tVxNt/view?usp=sharing" },
       ],
     },
     {
