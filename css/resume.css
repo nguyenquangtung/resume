@@ -205,9 +205,14 @@ a:hover, a:focus { color: var(--primary-dark); text-decoration: none; }
 
   .lang-switcher {
     padding: 12px 0 16px;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
     border-top: 1px solid rgba(99, 102, 241, 0.15);
     margin-top: 8px;
+    width: 100%;
+    align-self: center;
   }
 }
 
