@@ -11,7 +11,8 @@ var RESUME_DATA = {
   profile: {
     name:     { en: "NGUYEN QUANG <span>TUNG</span>",  vi: "NGUYỄN QUANG <span>TÙNG</span>" },
     role:     { en: "AI / ML Engineer",                vi: "AI / ML Engineer" },
-    phone:    "***.***.****",
+    // phone:    "***.***.****",
+    phone:    "037.667.4647",
     email:    "quangtung.work73@gmail.com",
     address:  { en: "Thu Duc District — Ho Chi Minh City", vi: "Quận Thủ Đức — TP. Hồ Chí Minh" },
     bio: {
@@ -24,8 +25,8 @@ var RESUME_DATA = {
     },
     avatar: "img/avatar-square2.jpg",
     cvLinks: {
-      vi: "https://drive.google.com/file/d/1jDliin3fOYL3oNd6EcVEmRyRoXCPg8W9/view?usp=sharing",
-      en: "https://drive.google.com/file/d/1ivL0z7RnDSmPI-gvFlnEMf_Y-nnqRxe0/view?usp=sharing",
+      vi: "https://drive.google.com/file/d/1f4Qm2soKO4Q06PXGCURteL3yQzeIdxpj/view?usp=sharing",
+      en: "https://drive.google.com/file/d/1Bu0ef_gwbhGyUAgAg3yLXdtEZkS4Sn5o/view?usp=sharing",
     },
   },
 
