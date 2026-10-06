@@ -23,6 +23,17 @@ var RESUME_DATA = {
            và khám phá sâu hơn về lĩnh vực này. Tôi liên tục cập nhật kiến thức mới, thực hành
            và nâng cao kỹ năng lập trình để hiện thực hóa các ý tưởng và dự án AI/ML có giá trị thực tiễn.`,
     },
+    highlights: [
+      { number: "2+", label: { en: "Years in AI & CV", vi: "Năm kinh nghiệm AI & CV" } },
+      { number: "6+", label: { en: "Key Projects", vi: "Dự án tiêu biểu" } },
+      { number: "Top 2", label: { en: "AWS DeepRacer VN", vi: "AWS DeepRacer VN" } },
+      { number: "AOI & Vision", label: { en: "HIKROBOT · COGNEX", vi: "HIKROBOT · COGNEX" } },
+    ],
+    // status: {
+    //   en: "Open to Opportunities · AI & Computer Vision",
+    //   vi: "Sẵn sàng đón nhận cơ hội mới · AI & Computer Vision",
+    // },
+    status: null,
     avatar: "img/avatar-square2.jpg",
     cvLinks: {
       vi: "https://drive.google.com/file/d/1f4Qm2soKO4Q06PXGCURteL3yQzeIdxpj/view?usp=sharing",
@@ -42,164 +53,194 @@ var RESUME_DATA = {
   /* ── KỸ NĂNG ── */
   skills: [
     {
-      category: { en: "Programming Languages", vi: "Ngôn ngữ lập trình" },
+      id: "vision",
+      category: { en: "Computer Vision & Smart Camera", vi: "Thị giác máy tính & Smart Camera" },
+      icon: "fas fa-camera",
+      badges: [
+        { label: "Smart_Camera", logo: "camerasecurity",     color: "06B6D4" },
+        { label: "OpenCV",       logo: "opencv",             color: "5C3EE8" },
+        { label: "TensorFlow",   logo: "tensorflow",         color: "FF6F00" },
+        { label: "Keras",        logo: "keras",              color: "D00000" },
+        { label: "YOLOv8",       logo: "yolo",               color: "00FFFF" },
+        { label: "MediaPipe",    logo: "google",             color: "4285F4" },
+      ],
+      items: [
+        {
+          name: "Smart Camera (HIKROBOT, COGNEX)",
+          highlight: true,
+          desc: {
+            en: "Industrial machine vision setup & programming with HIKROBOT (MVS) & COGNEX (In-Sight / VisionPro) smart cameras. Surface defect inspection (AOI), barcode/QR code reading, dimension measurement, OCR, and robot guidance.",
+            vi: "Cấu hình, tối ưu nguồn sáng/thấu kính và lập trình camera thông minh HIKROBOT (MVS) & COGNEX (In-Sight / VisionPro). Kiểm tra lỗi ngoại quan (AOI), đọc barcode/QR, đo kích thước, OCR và định vị dẫn đường robot arm.",
+          },
+        },
+        {
+          name: "OpenCV & Image Processing",
+          desc: {
+            en: "Image/video processing, feature extraction, camera calibration (lens distortion removal), object tracking, real-world deployment on manufacturing lines.",
+            vi: "Xử lý ảnh/video, trích xuất đặc trưng, hiệu chỉnh camera (loại bỏ méo thấu kính), bám vết đối tượng, triển khai thực tế trên dây chuyền sản xuất.",
+          },
+        },
+        {
+          name: "Deep Learning (TensorFlow / Keras / YOLO)",
+          desc: {
+            en: "Model design, dataset preparation, training, fine-tuning SOTA architectures (YOLO, CNN, MobileNet), edge inference optimization.",
+            vi: "Thiết kế kiến trúc mô hình, chuẩn bị dữ liệu, huấn luyện và fine-tune mô hình SOTA (YOLO, CNN, MobileNet), tối ưu suy luận cho edge computing.",
+          },
+        },
+      ],
+    },
+    {
+      id: "devops",
+      category: { en: "DevOps, Low-Code & Automation", vi: "DevOps, Low-Code & Tự động hóa" },
+      icon: "fas fa-cogs",
+      badges: [
+        { label: "Docker",          logo: "docker",            color: "2496ED" },
+        { label: "GitHub_Actions",  logo: "githubactions",     color: "2088FF" },
+        { label: "Power_Apps",      logo: "microsoft",         color: "742774" },
+        { label: "Power_Automate",  logo: "microsoft",         color: "0066FF" },
+        { label: "Git",             logo: "git",               color: "F05032" },
+        { label: "GitHub",          logo: "github",            color: "ffffff" },
+      ],
+      items: [
+        {
+          name: "Docker",
+          highlight: true,
+          desc: {
+            en: "Containerization for AI/ML pipelines & Computer Vision services, Dockerfile, multi-stage builds, Docker Compose, guaranteeing reproducible environments across dev and production.",
+            vi: "Container hóa ứng dụng AI/ML & Computer Vision pipelines, xây dựng Dockerfile, multi-stage build, Docker Compose, đảm bảo môi trường đồng nhất và ổn định từ dev đến production.",
+          },
+        },
+        {
+          name: "GitHub Workflow (GitHub Actions)",
+          highlight: true,
+          desc: {
+            en: "Setting up CI/CD automation pipelines, automated test runs, code linting, automated packaging, model versioning, and continuous delivery workflows.",
+            vi: "Thiết lập CI/CD automation pipeline với GitHub Actions, tự động chạy test, kiểm tra chất lượng mã nguồn, đóng gói bản phát hành và tự động hóa quy trình phân phối dự án.",
+          },
+        },
+        {
+          name: "Power Apps",
+          highlight: true,
+          desc: {
+            en: "Rapid low-code application development for enterprise operations, custom business forms, workflow interfaces, and connecting seamlessly with databases & AI APIs.",
+            vi: "Xây dựng ứng dụng doanh nghiệp low-code tùy biến nhanh, giao diện người dùng trực quan, số hóa biểu mẫu và tích hợp liền mạch với cơ sở dữ liệu & API AI.",
+          },
+        },
+        {
+          name: "Power Automate",
+          highlight: true,
+          desc: {
+            en: "End-to-end Robotic Process Automation (RPA), automating cross-platform business workflows (SharePoint, Teams, Outlook, REST APIs), scheduled data synchronization.",
+            vi: "Tự động hóa quy trình nghiệp vụ (RPA), kết nối quy trình liên thông giữa SharePoint, Teams, Outlook, REST APIs, đồng bộ dữ liệu và gửi thông báo tự động theo lịch.",
+          },
+        },
+        {
+          name: "Git & Source Control",
+          desc: {
+            en: "GitFlow branching strategy, commit conventions, code reviews, collaboration on GitHub/GitLab.",
+            vi: "Chiến lược phân nhánh GitFlow, quy chuẩn commit, code review, làm việc nhóm chuyên nghiệp trên GitHub/GitLab.",
+          },
+        },
+      ],
+    },
+    {
+      id: "programming",
+      category: { en: "Programming Languages & Backend", vi: "Ngôn ngữ lập trình & Backend" },
+      icon: "fas fa-code",
       badges: [
         { label: "Python",      logo: "python",              color: "3776AB" },
-        { label: "C",           logo: "C",                   color: "A8B9CC" },
+        { label: "C#",          logo: "dotnet",              color: "512BD4" },
         { label: "C++",         logo: "cplusplus",           color: "00599C" },
-        { label: ".Net",        logo: "dotnet",              color: "512BD4" },
+        { label: "Flask",       logo: "flask",               color: "ffffff" },
+        { label: "SQL_Server",  logo: "microsoftsqlserver",  color: "CC2927" },
+        { label: "MySQL",       logo: "mysql",               color: "4479A1" },
         { label: "HTML5",       logo: "html5",               color: "E34F26" },
         { label: "CSS3",        logo: "css3",                color: "1572B6" },
-        { label: "MySQL",       logo: "mySQL",               color: "4479A1" },
-        { label: "SQL_Server",  logo: "microsoftsqlserver",  color: "CC2927" },
       ],
       items: [
         {
           name: "Python",
           desc: {
-            en: "Data collection & preprocessing, building/training ML models, evaluation, visualization, deployment.",
-            vi: "Thu thập & tiền xử lý dữ liệu, xây dựng/huấn luyện mô hình ML, đánh giá, trực quan hóa, triển khai.",
+            en: "Data engineering, building & training ML/DL models, OpenCV computer vision pipelines, backend API scripting, PyPI package distribution.",
+            vi: "Kỹ thuật dữ liệu, xây dựng và huấn luyện mô hình ML/DL, pipeline thị giác máy tính OpenCV, API backend và đóng gói package PyPI.",
           },
         },
         {
           name: "C# (.Net)",
           desc: {
-            en: "Desktop software, basic programming tasks.",
-            vi: "Lập trình phần mềm desktop, thực hiện các tác vụ cơ bản.",
+            en: "Industrial desktop applications (WinForms/WPF), camera SDK integration, robot communication via serial/TCP/IP.",
+            vi: "Phần mềm desktop công nghiệp (WinForms/WPF), tích hợp camera SDK, giao tiếp robot qua giao thức serial/TCP/IP.",
           },
         },
         {
-          name: "HTML / CSS",
+          name: "Flask & RESTful APIs",
           desc: {
-            en: "Responsive web design, BEM methodology.",
-            vi: "Thiết kế web responsive chuẩn, phương pháp luận BEM.",
+            en: "Designing lightweight, high-performance APIs for serving AI/ML inference requests, JSON handling, security, and integration.",
+            vi: "Thiết kế API nhẹ, hiệu năng cao phục vụ suy luận mô hình AI/ML, xử lý request JSON, bảo mật và kết nối hệ thống.",
           },
         },
         {
-          name: "Database",
+          name: "Database (SQL Server, MySQL)",
           desc: {
-            en: "SQL queries, MySQL / Microsoft SQL Server.",
-            vi: "Truy vấn SQL, MySQL / Microsoft SQL Server.",
+            en: "Schema design, relational database queries, performance indexing, data logging for industrial inspection systems.",
+            vi: "Thiết kế lược đồ, truy vấn SQL quan hệ, tối ưu chỉ mục và lưu trữ log dữ liệu cho các hệ thống kiểm tra công nghiệp.",
           },
         },
       ],
     },
     {
-      category: { en: "Frameworks / Libraries", vi: "Framework / Thư viện" },
+      id: "data",
+      category: { en: "Data Science & Analysis", vi: "Khoa học dữ liệu & Phân tích" },
+      icon: "fas fa-chart-line",
       badges: [
-        { label: "TensorFlow",   logo: "tensorflow",  color: "FF6F00" },
-        { label: "Keras",        logo: "keras",        color: "D00000" },
-        { label: "OpenCV",       logo: "opencv",       color: "5C3EE8" },
-        { label: "Pandas",       logo: "pandas",       color: "150458" },
-        { label: "Scikit--learn",logo: "scikitlearn",  color: "F7931E" },
-        { label: "Flask",        logo: "flask",        color: "ffffff" },
+        { label: "Pandas",        logo: "pandas",       color: "150458" },
+        { label: "Scikit--learn", logo: "scikitlearn",  color: "F7931E" },
+        { label: "Jupyter",       logo: "jupyter",      color: "F37626" },
+        { label: "Google_Colab",  logo: "googlecolab",  color: "F9AB00" },
+        { label: "VS_Code",       logo: "visual-studio-code", color: "007ACC" },
       ],
       items: [
         {
-          name: "Keras / TensorFlow",
+          name: "Pandas & Scikit-learn",
           desc: {
-            en: "Model design, training, evaluation, fine-tuning, data preprocessing, deployment, and optimization.",
-            vi: "Thiết kế kiến trúc mô hình, huấn luyện, đánh giá, tinh chỉnh, tiền xử lý dữ liệu, triển khai và tối ưu.",
+            en: "Data cleansing, normalization, statistical exploratory data analysis (EDA), classical ML algorithms (SVM, Random Forest, Clustering).",
+            vi: "Làm sạch, chuẩn hóa, phân tích khám phá dữ liệu (EDA), áp dụng các thuật toán ML truyền thống (SVM, Random Forest, Clustering).",
           },
         },
         {
-          name: "Flask",
+          name: "Data Visualization & Model Analysis",
           desc: {
-            en: "Build APIs for AI/ML models, request handling, security and performance optimization.",
-            vi: "Xây dựng API cho mô hình AI/ML, xử lý request, bảo mật, tối ưu hiệu năng.",
-          },
-        },
-        {
-          name: "OpenCV",
-          desc: {
-            en: "Image/video processing, feature extraction, classification models, real-world deployment.",
-            vi: "Xử lý ảnh/video, trích xuất đặc trưng, xây dựng mô hình phân loại, nhận diện và triển khai thực tế.",
-          },
-        },
-        {
-          name: "Pandas",
-          desc: {
-            en: "Data manipulation, analysis, normalization, statistics, and mining.",
-            vi: "Xử lý, phân tích, chuẩn hóa dữ liệu, thống kê và khai thác dữ liệu trong AI/ML.",
-          },
-        },
-        {
-          name: "Scikit-learn",
-          desc: {
-            en: "Preprocessing, training, classification, regression, clustering, feature extraction.",
-            vi: "Tiền xử lý, huấn luyện, phân loại, hồi quy, phân cụm, trích xuất đặc trưng.",
-          },
-        },
-        {
-          name: "Matplotlib / Plotlib",
-          desc: {
-            en: "Data visualization, graphs, model result analysis.",
-            vi: "Trực quan hóa dữ liệu, vẽ đồ thị, phân tích kết quả mô hình.",
+            en: "Matplotlib, Seaborn, plotting loss/accuracy curves, confusion matrices, and model performance evaluation metrics.",
+            vi: "Matplotlib, Seaborn, trực quan hóa biểu đồ hàm mất mát, ma trận nhầm lẫn (confusion matrix) và các chỉ số đánh giá mô hình.",
           },
         },
       ],
     },
     {
-      category: { en: "Tools & Platforms", vi: "Công cụ & Nền tảng" },
-      badges: [
-        { label: "VS_Code",      logo: "visual-studio-code", color: "007ACC" },
-        { label: "Google_Colab", logo: "googlecolab",        color: "F9AB00" },
-        { label: "Jupyter",      logo: "jupyter",            color: "F37626" },
-        { label: "Git",          logo: "git",                color: "F05032" },
-        { label: "GitHub",       logo: "github",             color: "ffffff" },
-        { label: "Anaconda",     logo: "anaconda",           color: "44A833" },
-      ],
-      items: [
-        {
-          name: "VS Code",
-          desc: { en: "Debug, extensions, Docker basics.", vi: "Debug, extensions, Docker cơ bản." },
-        },
-        {
-          name: "Google Colab / Jupyter",
-          desc: {
-            en: "ML workflows, model building, data analysis and visualization.",
-            vi: "Quy trình ML, xây dựng mô hình, phân tích và trực quan hóa dữ liệu.",
-          },
-        },
-        {
-          name: "Git / GitHub / GitLab / Sourcetree",
-          desc: {
-            en: "Source control, branching strategies, code review.",
-            vi: "Quản lý source code, chiến lược branch, code review.",
-          },
-        },
-        {
-          name: "Agile / Scrum",
-          desc: {
-            en: "Sprint planning, Trello, Slack, Skype.",
-            vi: "Sprint planning, Trello, Slack, Skype.",
-          },
-        },
-      ],
-    },
-    {
-      category: { en: "Others", vi: "Khác" },
+      id: "softskills",
+      category: { en: "Methodology & Soft Skills", vi: "Phương pháp & Kỹ năng mềm" },
+      icon: "fas fa-users",
       badges: [],
       items: [
         {
           name: "English",
           desc: {
-            en: "Intermediate — Listening, Speaking, Reading, Writing.",
-            vi: "Trung cấp — Nghe, Nói, Đọc, Viết.",
+            en: "Intermediate proficiency — capable of reading technical documentation, communicating, and collaborating in professional environments.",
+            vi: "Trình độ trung cấp — đọc hiểu tài liệu kỹ thuật chuyên sâu, giao tiếp và cộng tác hiệu quả trong môi trường làm việc quốc tế.",
           },
         },
         {
-          name: null,
+          name: "Agile / Scrum",
           desc: {
-            en: "Quick adaptability to Agile/Scrum environments.",
-            vi: "Khả năng thích nghi nhanh với môi trường Agile/Scrum.",
+            en: "Sprint planning, daily standup, iterative development, Jira, Trello, Slack.",
+            vi: "Quy trình Agile/Scrum, kế hoạch sprint, bàn giao lặp, phối hợp hiệu quả qua Jira, Trello, Slack.",
           },
         },
         {
-          name: "Soft Skills",
+          name: "Critical Thinking & Self-learning",
           desc: {
-            en: "Teamwork, curiosity-driven learning, time management.",
-            vi: "Làm việc nhóm, chủ động học hỏi, quản lý thời gian.",
+            en: "Proactive problem solver, rapid technology adoption, research mindset, and high adaptability to industrial challenges.",
+            vi: "Tư duy phản biện, khả năng tự học công nghệ mới nhanh chóng, tinh thần R&D và thích ứng linh hoạt với bài toán thực tế.",
           },
         },
       ],
