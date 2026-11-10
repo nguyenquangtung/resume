@@ -11,7 +11,7 @@
 function Invoke-Graphify {
     param([string[]]$GraphifyArgs)
     if (Get-Command graphify -ErrorAction SilentlyContinue) {
-        & graphify @GraphifyArgs
+        & graphify @GraphifyArgs | Out-Host
         return $LASTEXITCODE
     }
     foreach ($py in @("py", "python", "python3")) {
@@ -20,7 +20,7 @@ function Invoke-Graphify {
             if ($py -eq "py") { $pyArgs += "-3" }
             & $py @pyArgs -c "import graphify" 2>$null
             if ($LASTEXITCODE -eq 0) {
-                & $py @pyArgs -m graphify @GraphifyArgs
+                & $py @pyArgs -m graphify @GraphifyArgs | Out-Host
                 return $LASTEXITCODE
             }
         }
