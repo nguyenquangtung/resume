@@ -26,6 +26,15 @@
     if (el) el.innerHTML = html;
   }
 
+  /** "A · B · C" -> tech chip spans */
+  function techChips(tech) {
+    if (!tech) return "";
+    return tech.split("·").map(function (p) { return p.trim(); })
+      .filter(Boolean)
+      .map(function (p) { return '<span class="tech-chip">' + p + '</span>'; })
+      .join(" ");
+  }
+
   /* ── badge URL builder ────────────────────────────────── */
   function badgeUrl(b) {
     var logoColor = b.color === "ffffff" ? "white" : b.color;
@@ -86,7 +95,7 @@
 
     // Social icons
     var socialsHtml = data.socials.map(function (s) {
-      return '<a target="_blank" href="' + s.url + '" title="' + s.label + '" aria-label="' + s.label + '">'
+      return '<a target="_blank" rel="noopener noreferrer" href="' + s.url + '" title="' + s.label + '" aria-label="' + s.label + '">'
         + '<i class="' + s.icon + '"></i></a>';
     }).join("\n          ");
 
@@ -110,10 +119,10 @@
 
     var html =
       statusHtml +
-      '<div class="role-badge mb-2"><i class="fas fa-sparkles mr-2"></i>' + t(p.role, lang) + '</div>\n' +
+      '<div class="role-badge mb-2"><i class="fas fa-microchip mr-2"></i>' + t(p.role, lang) + '</div>\n' +
       '<h2 class="hero-name mb-3">' + t(p.name, lang) + '</h2>\n' +
       '<div class="contact-badges-row mb-4">\n' +
-      '  <a class="contact-badge" href="tel:' + p.phone.replace(/[^0-9+]/g, '') + '"><i class="fas fa-phone-alt"></i><span>' + p.phone + '</span></a>\n' +
+      '  <a class="contact-badge contact-badge-tel tel" href="tel:' + p.phone.replace(/[^0-9+]/g, '') + '"><i class="fas fa-phone"></i><span>' + p.phone + '</span></a>\n' +
       '  <a class="contact-badge" href="mailto:' + p.email + '"><i class="fas fa-envelope"></i><span>' + p.email + '</span></a>\n' +
       '  <div class="contact-badge"><i class="fas fa-map-marker-alt"></i><span>' + t(p.address, lang) + '</span></div>\n' +
       '</div>\n' +
@@ -121,14 +130,14 @@
       statsHtml +
       '<div class="social-icons mb-4">\n          ' + socialsHtml + '\n        </div>\n' +
       '<div class="download-cta-row mb-4">\n' +
-      '  <a class="btn-download btn-download-vn" target="_blank" href="' + p.cvLinks.vi + '">\n' +
+      '  <a class="btn-download btn-download-vn" target="_blank" rel="noopener noreferrer" href="' + p.cvLinks.vi + '">\n' +
       '    <i class="fas fa-file-pdf"></i> ' + btnVnLabel + '\n  </a>\n' +
-      '  <a class="btn-download btn-download-en" target="_blank" href="' + p.cvLinks.en + '">\n' +
+      '  <a class="btn-download btn-download-en" target="_blank" rel="noopener noreferrer" href="' + p.cvLinks.en + '">\n' +
       '    <i class="fas fa-download"></i> ' + btnEnLabel + '\n  </a>\n' +
       '</div>\n' +
       '<a class="scroll-down-arrow js-scroll-trigger" href="#skills">\n' +
       '  <span>' + (isVi ? "Khám phá kỹ năng" : "Explore Skills") + '</span>\n' +
-      '  <i class="fas fa-chevron-down"></i>\n' +
+      '  <i class="fas fa-arrow-right"></i>\n' +
       '</a>';
 
     setHTML("about-content", html);
@@ -140,13 +149,13 @@
     var allLabel = isVi ? "Tất cả" : "All Skills";
 
     // Filter bar
-    var filterHtml = '<div class="skills-filter-bar mb-4">\n'
-      + '  <button class="filter-pill active" data-filter="all">' + allLabel + '</button>\n';
+    var filterHtml = '<div class="skills-filter-bar mb-4" role="group" aria-label="' + (isVi ? "Lọc kỹ năng" : "Filter skills") + '">\n'
+      + '  <button type="button" class="filter-pill active" aria-pressed="true" data-filter="all">' + allLabel + '</button>\n';
 
     data.skills.forEach(function (group) {
       var catName = t(group.category, lang);
       var groupId = group.id || catName.toLowerCase().replace(/[^a-z0-9]/g, '-');
-      filterHtml += '  <button class="filter-pill" data-filter="' + groupId + '">' + catName + '</button>\n';
+      filterHtml += '  <button type="button" class="filter-pill" aria-pressed="false" data-filter="' + groupId + '">' + catName + '</button>\n';
     });
     filterHtml += '</div>\n';
 
@@ -204,8 +213,12 @@
 
     buttons.forEach(function (btn) {
       btn.addEventListener("click", function () {
-        buttons.forEach(function (b) { b.classList.remove("active"); });
+        buttons.forEach(function (b) {
+          b.classList.remove("active");
+          b.setAttribute("aria-pressed", "false");
+        });
         btn.classList.add("active");
+        btn.setAttribute("aria-pressed", "true");
         var filter = btn.getAttribute("data-filter");
 
         groups.forEach(function (grp) {
@@ -225,40 +238,39 @@
     var isVi = lang === "vi";
     var html = '<div class="section-title-wrap mb-4">\n'
       + '  <h3 class="mb-0">' + (isVi ? "Dự án tiêu biểu" : "Featured Projects") + '</h3>\n'
-      + '  <p class="section-subtitle">' + (isVi ? "Các hệ thống AI/Computer Vision và giải pháp thực tế đã triển khai" : "Computer Vision pipelines, AI robotics and software systems") + '</p>\n'
+      + '  <p class="section-subtitle">' + (isVi ? "Hệ thống Computer Vision, Edge AI và LLM đã triển khai thực tế" : "Computer Vision, Edge AI and LLM systems built for real use") + '</p>\n'
       + '</div>\n'
       + '<div class="projects-grid">\n';
 
     data.projects.forEach(function (proj) {
-      var linksHtml = proj.links.map(function (lnk) {
-        return '<a class="project-link" target="_blank" href="' + lnk.url + '">'
+      var linksHtml = (proj.links || []).map(function (lnk) {
+        return '<a class="project-link" target="_blank" rel="noopener noreferrer" href="' + lnk.url + '">'
           + '<i class="' + lnk.icon + '"></i> ' + t(lnk.label, lang) + '</a>';
       }).join("\n            ");
 
-      // Tech tags split
-      var techChips = '';
-      if (proj.tech) {
-        var parts = proj.tech.split('·');
-        parts.forEach(function (p) {
-          var trimmed = p.trim();
-          if (trimmed) {
-            techChips += '<span class="tech-chip">' + trimmed + '</span> ';
-          }
-        });
-      }
+      // Work projects have no public links: show a context label instead of a date
+      var metaHtml = proj.context
+        ? '<span class="project-context"><i class="fas fa-industry"></i> ' + t(proj.context, lang) + '</span>'
+        : '<span class="project-date">' + t(proj.date, lang) + '</span>';
+
+      var footerHtml = linksHtml
+        ? '  <div class="project-links mt-auto">\n            ' + linksHtml + '\n          </div>\n'
+        : '  <div class="project-links mt-auto"><span class="project-private">'
+          + '<i class="fas fa-lock"></i> ' + (isVi ? "Dự án nội bộ, không công khai mã nguồn" : "Internal project, source not public")
+          + '</span></div>\n';
 
       html +=
-        '<div class="project-card card-glass fade-in-up">\n' +
+        '<article class="project-card card-glass fade-in-up' + (proj.featured ? ' project-featured' : '') + '">\n' +
         '  <div class="project-card-header">\n' +
         '    <div>\n' +
-        '      <div class="project-title">' + t(proj.title, lang) + '</div>\n' +
-        '      <div class="project-chips mt-1">' + techChips + '</div>\n' +
+        '      <h4 class="project-title">' + t(proj.title, lang) + '</h4>\n' +
+        '      <div class="project-chips mt-1">' + techChips(proj.tech) + '</div>\n' +
         '    </div>\n' +
-        '    <span class="project-date">' + t(proj.date, lang) + '</span>\n' +
+        '    ' + metaHtml + '\n' +
         '  </div>\n' +
         '  <p class="project-desc">' + t(proj.desc, lang) + '</p>\n' +
-        '  <div class="project-links mt-auto">\n            ' + linksHtml + '\n          </div>\n' +
-        '</div>\n';
+        footerHtml +
+        '</article>\n';
     });
 
     html += '</div>\n'; // .projects-grid
@@ -278,7 +290,7 @@
 
     data.experience.forEach(function (exp) {
       var evalHtml = exp.evalUrl
-        ? ' &nbsp;·&nbsp; <a target="_blank" href="' + exp.evalUrl + '" style="' + evalStyle + '">'
+        ? ' &nbsp;·&nbsp; <a target="_blank" rel="noopener noreferrer" href="' + exp.evalUrl + '" style="' + evalStyle + '">'
           + '<i class="fas fa-certificate mr-1"></i>' + t(exp.evalLabel, lang) + '</a>'
         : '';
 
@@ -288,7 +300,7 @@
         itemsHtml += '<ul class="exp-items">\n';
         exp.items.forEach(function (item) {
           var videoBtn = item.videoUrl
-            ? ' <a class="exp-video-link" target="_blank" href="' + item.videoUrl + '">'
+            ? ' <a class="exp-video-link" target="_blank" rel="noopener noreferrer" href="' + item.videoUrl + '">'
               + '<i class="fab fa-youtube"></i> ' + (isVi ? 'Xem demo' : 'Watch demo') + '</a>'
             : '';
           itemsHtml += '  <li><span class="exp-item-dot"></span><span class="exp-item-text">'
@@ -304,13 +316,14 @@
         '      <div class="exp-card-header">\n' +
         '        <div>\n' +
         '          <div class="exp-company">' + t(exp.company, lang)
-            + ' <a class="company-link" target="_blank" href="' + exp.infoUrl + '"><i class="fas fa-external-link-alt"></i></a></div>\n' +
+            + ' <a class="company-link" target="_blank" rel="noopener noreferrer" href="' + exp.infoUrl + '"><i class="fas fa-external-link-alt"></i></a></div>\n' +
         '          <div class="exp-position">' + t(exp.position, lang) + evalHtml + '</div>\n' +
         '        </div>\n' +
         '        <span class="exp-date">' + t(exp.date, lang) + '</span>\n' +
         '      </div>\n' +
         '      <p class="exp-desc">' + t(exp.desc, lang) + '</p>\n' +
         itemsHtml +
+        (exp.tech ? '      <div class="project-chips exp-tech">' + techChips(exp.tech) + '</div>\n' : '') +
         '    </div>\n' +
         '  </div>\n';
     });
@@ -353,7 +366,7 @@
         '  <div class="comp-info">\n' +
         '    <div class="competition-title">' + comp.title + '</div>\n' +
         '    <div class="competition-desc">' + t(comp.desc, lang)
-          + ' &nbsp;·&nbsp; <a target="_blank" href="' + comp.certUrl + '" class="cert-verify-link">'
+          + ' &nbsp;·&nbsp; <a target="_blank" rel="noopener noreferrer" href="' + comp.certUrl + '" class="cert-verify-link">'
           + t(comp.certLabel, lang) + '</a></div>\n' +
         '  </div>\n' +
         '  <span class="competition-date">' + comp.date + '</span>\n' +
@@ -371,16 +384,16 @@
       if (cert.children) {
         var idx = toggleIdx++;
         html +=
-          '<li><button class="toggle-button toggle-arrow" onclick="toggleItem(' + idx + ')">'
+          '<li><button type="button" class="toggle-button toggle-arrow" aria-expanded="false" onclick="toggleItem(' + idx + ')">'
           + '<i class="fas fa-folder-open mr-2" style="color:var(--accent);"></i>'
           + t(cert.label, lang) + '</button>\n' +
           '  <ul class="toggle-list toggle-item">\n';
         cert.children.forEach(function (child) {
-          html += '    <li><a target="_blank" href="' + child.url + '"><i class="fas fa-award mr-2"></i>' + t(child.label, lang) + '</a></li>\n';
+          html += '    <li><a target="_blank" rel="noopener noreferrer" href="' + child.url + '"><i class="fas fa-award mr-2"></i>' + t(child.label, lang) + '</a></li>\n';
         });
         html += '  </ul>\n</li>\n';
       } else {
-        html += '<li><a target="_blank" href="' + cert.url + '"><i class="fas fa-award mr-2"></i>' + t(cert.label, lang) + '</a></li>\n';
+        html += '<li><a target="_blank" rel="noopener noreferrer" href="' + cert.url + '"><i class="fas fa-award mr-2"></i>' + t(cert.label, lang) + '</a></li>\n';
       }
     });
 
@@ -443,16 +456,23 @@
     btt.innerHTML = '<i class="fas fa-arrow-up"></i>';
     document.body.appendChild(btt);
 
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 400) {
-        btt.classList.add("visible");
-      } else {
-        btt.classList.remove("visible");
-      }
-    });
+    // In slide mode each section scrolls on its own, so track whichever element scrolled
+    function scroller() {
+      return document.querySelector(".deck > section.is-active") || window;
+    }
+    function scrollTopOf(el) {
+      return el === window ? window.scrollY : el.scrollTop;
+    }
+    function refresh() {
+      btt.classList.toggle("visible", scrollTopOf(scroller()) > 400);
+    }
+
+    document.addEventListener("scroll", refresh, true); // capture: section scrolls don't bubble
+    document.addEventListener("deck:change", refresh);
 
     btt.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      scroller().scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
     });
   }
 
@@ -476,6 +496,12 @@
     renderEducation(data, lang);
     initDarkMode(lang);
     initBackToTop();
+    if (typeof window.initDeck === "function") window.initDeck(lang);
+
+    // Font Awesome icons are decorative; hide them from screen readers
+    document.querySelectorAll("i.fas, i.fab, i.far").forEach(function (i) {
+      i.setAttribute("aria-hidden", "true");
+    });
 
     // Re-run scroll-reveal observer after DOM is populated
     setTimeout(function () {

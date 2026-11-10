@@ -1,0 +1,189 @@
+{
+  ".vscode/tasks.json": {
+    "mtime": 1772440595.7435033,
+    "seen": 1793758192.0950792,
+    "ast_hash": "c7f2f676f9e1b0925edf8ca1f2e08f37",
+    "semantic_hash": "c7f2f676f9e1b0925edf8ca1f2e08f37",
+    "ast_empty": true
+  },
+  "gulpfile.js": {
+    "mtime": 1772435420.3827102,
+    "seen": 1793758192.0950792,
+    "ast_hash": "2049bd7ca940f7222eb6a4dd84d3d505",
+    "semantic_hash": "2049bd7ca940f7222eb6a4dd84d3d505"
+  },
+  "js/data.js": {
+    "mtime": 1791297018.0380003,
+    "seen": 1793758192.0950792,
+    "ast_hash": "3125d6242bfe63b3c3ce94d880c435d3",
+    "semantic_hash": "3125d6242bfe63b3c3ce94d880c435d3"
+  },
+  "js/render.js": {
+    "mtime": 1791303045.6434875,
+    "seen": 1793758192.0950792,
+    "ast_hash": "72b309a19cf26d00cd5017c863fb60f1",
+    "semantic_hash": "72b309a19cf26d00cd5017c863fb60f1"
+  },
+  "js/resume.js": {
+    "mtime": 1772440732.7826495,
+    "seen": 1793758192.096079,
+    "ast_hash": "1c40522638e337b2269010b23f1f9f0f",
+    "semantic_hash": "1c40522638e337b2269010b23f1f9f0f"
+  },
+  "js/resume.min.js": {
+    "mtime": 1772435420.390208,
+    "seen": 1793758192.096079,
+    "ast_hash": "62240df82598a215ab5b577ca5d76e88",
+    "semantic_hash": "62240df82598a215ab5b577ca5d76e88"
+  },
+  "package.json": {
+    "mtime": 1772435420.3918312,
+    "seen": 1793758192.096079,
+    "ast_hash": "42b55d66f38403931719fafd81aeca6b",
+    "semantic_hash": "42b55d66f38403931719fafd81aeca6b"
+  },
+  "vendor/bootstrap/js/bootstrap.bundle.js": {
+    "mtime": 1772435420.4057028,
+    "seen": 1793758192.096079,
+    "ast_hash": "a9247b1fe21ee409d0b37e74100de687",
+    "semantic_hash": "a9247b1fe21ee409d0b37e74100de687"
+  },
+  "vendor/bootstrap/js/bootstrap.bundle.min.js": {
+    "mtime": 1772435420.4090865,
+    "seen": 1793758192.096079,
+    "ast_hash": "a454220fc07088bf1fdd19313b6bfd50",
+    "semantic_hash": "a454220fc07088bf1fdd19313b6bfd50"
+  },
+  "vendor/bootstrap/js/bootstrap.js": {
+    "mtime": 1772435420.4114282,
+    "seen": 1793758192.096079,
+    "ast_hash": "7f827fe484ec04346553202782b0664b",
+    "semantic_hash": "7f827fe484ec04346553202782b0664b"
+  },
+  "vendor/bootstrap/js/bootstrap.min.js": {
+    "mtime": 1772435420.4125223,
+    "seen": 1793758192.096079,
+    "ast_hash": "e1d98d47689e00f8ecbc5d9f61bdb42e",
+    "semantic_hash": "e1d98d47689e00f8ecbc5d9f61bdb42e"
+  },
+  "vendor/fontawesome-free/js/all.js": {
+    "mtime": 1772435420.4258347,
+    "seen": 1793758192.097078,
+    "ast_hash": "2b71fa484a528562daf4922ff784dc81",
+    "semantic_hash": "2b71fa484a528562daf4922ff784dc81"
+  },
+  "vendor/fontawesome-free/js/all.min.js": {
+    "mtime": 1772435420.4270134,
+    "seen": 1793758192.097078,
+    "ast_hash": "3321acfaaf879848a1f6773e691e2dd0",
+    "semantic_hash": "3321acfaaf879848a1f6773e691e2dd0"
+  },
+  "vendor/fontawesome-free/js/brands.js": {
+    "mtime": 1772435420.4293363,
+    "seen": 1793758192.097078,
+    "ast_hash": "cac879ab3075992d2a11c5e174802050",
+    "semantic_hash": "cac879ab3075992d2a11c5e174802050"
+  },
+  "vendor/fontawesome-free/js/brands.min.js": {
+    "mtime": 1772435420.4316237,
+    "seen": 1793758192.097078,
+    "ast_hash": "66defce05383490f57378b1a364986d2",
+    "semantic_hash": "66defce05383490f57378b1a364986d2"
+  },
+  "vendor/fontawesome-free/js/fontawesome.js": {
+    "mtime": 1772435420.432781,
+    "seen": 1793758192.097078,
+    "ast_hash": "d07b587842333c7ceaea8fb6c09b39fb",
+    "semantic_hash": "d07b587842333c7ceaea8fb6c09b39fb"
+  },
+  "vendor/fontawesome-free/js/fontawesome.min.js": {
+    "mtime": 1772435420.433348,
+    "seen": 1793758192.097078,
+    "ast_hash": "f5e2cc24682bd489f36f55634b6384e7",
+    "semantic_hash": "f5e2cc24682bd489f36f55634b6384e7"
+  },
+  "vendor/fontawesome-free/js/regular.js": {
+    "mtime": 1772435420.4344325,
+    "seen": 1793758192.097078,
+    "ast_hash": "d02f87f75a6bd04ed498d94b945d876c",
+    "semantic_hash": "d02f87f75a6bd04ed498d94b945d876c"
+  },
+  "vendor/fontawesome-free/js/regular.min.js": {
+    "mtime": 1772435420.4351242,
+    "seen": 1793758192.0981126,
+    "ast_hash": "65ed6ca7b91b06457f79fe29e32258c6",
+    "semantic_hash": "65ed6ca7b91b06457f79fe29e32258c6"
+  },
+  "vendor/fontawesome-free/js/solid.js": {
+    "mtime": 1772435420.4373395,
+    "seen": 1793758192.0981126,
+    "ast_hash": "206e089895211496d78dd457e69b87b0",
+    "semantic_hash": "206e089895211496d78dd457e69b87b0"
+  },
+  "vendor/fontawesome-free/js/solid.min.js": {
+    "mtime": 1772435420.4379046,
+    "seen": 1793758192.0981126,
+    "ast_hash": "04a5608d5ca7f5953a7a9e6113c241b7",
+    "semantic_hash": "04a5608d5ca7f5953a7a9e6113c241b7"
+  },
+  "vendor/fontawesome-free/js/v4-shims.js": {
+    "mtime": 1772435420.438464,
+    "seen": 1793758192.0981126,
+    "ast_hash": "bd0bbadd4409e5f19baf56eb75addb0c",
+    "semantic_hash": "bd0bbadd4409e5f19baf56eb75addb0c"
+  },
+  "vendor/fontawesome-free/js/v4-shims.min.js": {
+    "mtime": 1772435420.4390354,
+    "seen": 1793758192.0981126,
+    "ast_hash": "6fefaf25ceea1caad6bb18bfeba4330a",
+    "semantic_hash": "6fefaf25ceea1caad6bb18bfeba4330a"
+  },
+  "vendor/fontawesome-free/package.json": {
+    "mtime": 1772435420.4462843,
+    "seen": 1793758192.0981126,
+    "ast_hash": "75dea47441de93b504383f3e3633340d",
+    "semantic_hash": "75dea47441de93b504383f3e3633340d"
+  },
+  "vendor/jquery-easing/jquery.easing.compatibility.js": {
+    "mtime": 1772435420.9426541,
+    "seen": 1793758192.0991144,
+    "ast_hash": "ba0f90adf86e509dfabe178af9e726fc",
+    "semantic_hash": "ba0f90adf86e509dfabe178af9e726fc"
+  },
+  "vendor/jquery-easing/jquery.easing.js": {
+    "mtime": 1772435420.9432173,
+    "seen": 1793758192.0991144,
+    "ast_hash": "b55af8280cffdeaed8cc30b960f68878",
+    "semantic_hash": "b55af8280cffdeaed8cc30b960f68878"
+  },
+  "vendor/jquery-easing/jquery.easing.min.js": {
+    "mtime": 1772435420.9437711,
+    "seen": 1793758192.0991144,
+    "ast_hash": "e2d41e5c8fed838d9014fea53d45ce75",
+    "semantic_hash": "e2d41e5c8fed838d9014fea53d45ce75"
+  },
+  "vendor/jquery/jquery.js": {
+    "mtime": 1772435420.9454236,
+    "seen": 1793758192.0991144,
+    "ast_hash": "6a07da9fae934baf3f749e876bbfdd96",
+    "semantic_hash": "6a07da9fae934baf3f749e876bbfdd96"
+  },
+  "vendor/jquery/jquery.min.js": {
+    "mtime": 1772435420.945994,
+    "seen": 1793758192.0991144,
+    "ast_hash": "a09e13ee94d51c524b7e2a728c7d4039",
+    "semantic_hash": "a09e13ee94d51c524b7e2a728c7d4039"
+  },
+  "vendor/jquery/jquery.slim.js": {
+    "mtime": 1772435420.9482646,
+    "seen": 1793758192.0991144,
+    "ast_hash": "450d478c0491cf0b2d365997faff70dd",
+    "semantic_hash": "450d478c0491cf0b2d365997faff70dd"
+  },
+  "vendor/jquery/jquery.slim.min.js": {
+    "mtime": 1772435420.9494011,
+    "seen": 1793758192.0991144,
+    "ast_hash": "99b0a83cf1b0b1e2cb16041520e87641",
+    "semantic_hash": "99b0a83cf1b0b1e2cb16041520e87641"
+  }
+}

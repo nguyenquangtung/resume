@@ -10,24 +10,28 @@ var RESUME_DATA = {
   /* ── THÔNG TIN CÁ NHÂN ── */
   profile: {
     name:     { en: "NGUYEN QUANG <span>TUNG</span>",  vi: "NGUYỄN QUANG <span>TÙNG</span>" },
-    role:     { en: "AI / ML Engineer",                vi: "AI / ML Engineer" },
+    role:     { en: "AI Engineer · Computer Vision & Edge AI", vi: "AI Engineer · Computer Vision & Edge AI" },
     // phone:    "***.***.****",
     phone:    "037.667.4647",
     email:    "quangtung.work73@gmail.com",
     address:  { en: "Thu Duc District — Ho Chi Minh City", vi: "Quận Thủ Đức — TP. Hồ Chí Minh" },
     bio: {
-      en: `I am very passionate about the field of <strong>Artificial Intelligence</strong> and have invested
-           significant time and effort exploring it deeply. I continuously update my knowledge, practice,
-           and sharpen my programming skills to implement meaningful AI/ML projects and solve real-world problems.`,
-      vi: `Tôi rất đam mê lĩnh vực <strong>Trí Tuệ Nhân Tạo</strong> và đã dành nhiều thời gian, nỗ lực để học hỏi
-           và khám phá sâu hơn về lĩnh vực này. Tôi liên tục cập nhật kiến thức mới, thực hành
-           và nâng cao kỹ năng lập trình để hiện thực hóa các ý tưởng và dự án AI/ML có giá trị thực tiễn.`,
+      en: `AI Engineer focused on <strong>Computer Vision</strong> and <strong>Edge AI</strong>. I train models with
+           PyTorch/YOLO, optimize them with ONNX/TensorRT, and deploy them on <strong>NVIDIA Jetson</strong> for real-time
+           production use: license plate OCR, industrial inspection with HIKROBOT/COGNEX smart cameras, and robot guidance.
+           I also build <strong>LLM applications</strong> (local Qwen, Gemini API, FastAPI), such as an on-premise chatbot
+           that answers factory OEE questions.`,
+      vi: `AI Engineer tập trung vào <strong>Computer Vision</strong> và <strong>Edge AI</strong>. Tôi huấn luyện mô hình bằng
+           PyTorch/YOLO, tối ưu với ONNX/TensorRT và triển khai trên <strong>NVIDIA Jetson</strong> chạy thời gian thực trong
+           sản xuất: OCR biển số xe, kiểm tra ngoại quan công nghiệp với smart camera HIKROBOT/COGNEX và dẫn đường robot.
+           Tôi cũng phát triển <strong>ứng dụng LLM</strong> (Qwen chạy local, Gemini API, FastAPI), ví dụ chatbot nội bộ
+           trả lời các câu hỏi về chỉ số OEE của nhà máy.`,
     },
     highlights: [
-      { number: "2+", label: { en: "Years in AI & CV", vi: "Năm kinh nghiệm AI & CV" } },
-      { number: "6+", label: { en: "Key Projects", vi: "Dự án tiêu biểu" } },
-      { number: "Top 2", label: { en: "AWS DeepRacer VN", vi: "AWS DeepRacer VN" } },
-      { number: "AOI & Vision", label: { en: "HIKROBOT · COGNEX", vi: "HIKROBOT · COGNEX" } },
+      { number: "2.5+",  label: { en: "Years in AI & CV",       vi: "Năm kinh nghiệm AI & CV" } },
+      { number: "Jetson", label: { en: "Orin · Nano · TensorRT", vi: "Orin · Nano · TensorRT" } },
+      { number: "Top 2", label: { en: "AWS DeepRacer VN",        vi: "AWS DeepRacer VN" } },
+      { number: "AOI",   label: { en: "HIKROBOT · COGNEX",       vi: "HIKROBOT · COGNEX" } },
     ],
     // status: {
     //   en: "Open to Opportunities · AI & Computer Vision",
@@ -54,136 +58,159 @@ var RESUME_DATA = {
   skills: [
     {
       id: "vision",
-      category: { en: "Computer Vision & Smart Camera", vi: "Thị giác máy tính & Smart Camera" },
+      category: { en: "Computer Vision & Deep Learning", vi: "Thị giác máy tính & Deep Learning" },
       icon: "fas fa-camera",
       badges: [
-        { label: "Smart_Camera", logo: "camerasecurity",     color: "06B6D4" },
+        { label: "PyTorch",      logo: "pytorch",            color: "EE4C2C" },
+        { label: "YOLO",         logo: "yolo",               color: "00FFFF" },
         { label: "OpenCV",       logo: "opencv",             color: "5C3EE8" },
         { label: "TensorFlow",   logo: "tensorflow",         color: "FF6F00" },
         { label: "Keras",        logo: "keras",              color: "D00000" },
-        { label: "YOLOv8",       logo: "yolo",               color: "00FFFF" },
         { label: "MediaPipe",    logo: "google",             color: "4285F4" },
+        { label: "Smart_Camera", logo: "camerasecurity",     color: "06B6D4" },
       ],
       items: [
+        {
+          name: "Deep Learning (PyTorch / YOLO)",
+          highlight: true,
+          desc: {
+            en: "Dataset preparation, training and fine-tuning detection/classification models (YOLO, CNN, MobileNet) with PyTorch; evaluation with mAP, precision/recall and confusion matrices.",
+            vi: "Chuẩn bị dữ liệu, huấn luyện và fine-tune mô hình phát hiện/phân loại (YOLO, CNN, MobileNet) bằng PyTorch; đánh giá bằng mAP, precision/recall và confusion matrix.",
+          },
+        },
+        {
+          name: "OCR & License Plate Recognition",
+          highlight: true,
+          desc: {
+            en: "Two-stage pipelines (plate detection, then character recognition) running in real time on camera streams, including preprocessing for skewed, blurred and low-light images.",
+            vi: "Pipeline 2 bước (phát hiện biển số, nhận dạng ký tự) chạy thời gian thực trên luồng camera, kèm tiền xử lý cho ảnh nghiêng, mờ và thiếu sáng.",
+          },
+        },
         {
           name: "Smart Camera (HIKROBOT, COGNEX)",
           highlight: true,
           desc: {
-            en: "Industrial machine vision setup & programming with HIKROBOT (MVS) & COGNEX (In-Sight / VisionPro) smart cameras. Surface defect inspection (AOI), barcode/QR code reading, dimension measurement, OCR, and robot guidance.",
-            vi: "Cấu hình, tối ưu nguồn sáng/thấu kính và lập trình camera thông minh HIKROBOT (MVS) & COGNEX (In-Sight / VisionPro). Kiểm tra lỗi ngoại quan (AOI), đọc barcode/QR, đo kích thước, OCR và định vị dẫn đường robot arm.",
+            en: "Industrial machine vision setup & programming with HIKROBOT (MVS) & COGNEX (In-Sight / VisionPro): surface defect inspection (AOI), barcode/QR reading, dimension measurement, OCR and robot guidance.",
+            vi: "Cấu hình, tối ưu nguồn sáng/thấu kính và lập trình camera HIKROBOT (MVS) & COGNEX (In-Sight / VisionPro): kiểm tra lỗi ngoại quan (AOI), đọc barcode/QR, đo kích thước, OCR và dẫn đường robot arm.",
           },
         },
         {
           name: "OpenCV & Image Processing",
           desc: {
-            en: "Image/video processing, feature extraction, camera calibration (lens distortion removal), object tracking, real-world deployment on manufacturing lines.",
-            vi: "Xử lý ảnh/video, trích xuất đặc trưng, hiệu chỉnh camera (loại bỏ méo thấu kính), bám vết đối tượng, triển khai thực tế trên dây chuyền sản xuất.",
-          },
-        },
-        {
-          name: "Deep Learning (TensorFlow / Keras / YOLO)",
-          desc: {
-            en: "Model design, dataset preparation, training, fine-tuning SOTA architectures (YOLO, CNN, MobileNet), edge inference optimization.",
-            vi: "Thiết kế kiến trúc mô hình, chuẩn bị dữ liệu, huấn luyện và fine-tune mô hình SOTA (YOLO, CNN, MobileNet), tối ưu suy luận cho edge computing.",
+            en: "Image/video processing, feature extraction, camera calibration (lens distortion removal) and object tracking on manufacturing lines.",
+            vi: "Xử lý ảnh/video, trích xuất đặc trưng, hiệu chỉnh camera (loại bỏ méo thấu kính) và bám vết đối tượng trên dây chuyền sản xuất.",
           },
         },
       ],
     },
     {
-      id: "devops",
-      category: { en: "DevOps, Low-Code & Automation", vi: "DevOps, Low-Code & Tự động hóa" },
-      icon: "fas fa-cogs",
+      id: "edge",
+      category: { en: "Edge AI & Model Optimization", vi: "Edge AI & Tối ưu mô hình" },
+      icon: "fas fa-microchip",
       badges: [
-        { label: "Docker",          logo: "docker",            color: "2496ED" },
-        { label: "GitHub_Actions",  logo: "githubactions",     color: "2088FF" },
-        { label: "Power_Apps",      logo: "microsoft",         color: "742774" },
-        { label: "Power_Automate",  logo: "microsoft",         color: "0066FF" },
-        { label: "Git",             logo: "git",               color: "F05032" },
-        { label: "GitHub",          logo: "github",            color: "ffffff" },
+        { label: "NVIDIA_Jetson", logo: "nvidia",            color: "76B900" },
+        { label: "TensorRT",      logo: "nvidia",            color: "76B900" },
+        { label: "ONNX",          logo: "onnx",              color: "ffffff" },
+        { label: "Docker",        logo: "docker",            color: "2496ED" },
+        { label: "Linux",         logo: "linux",             color: "FCC624" },
       ],
       items: [
         {
-          name: "Docker",
+          name: "NVIDIA Jetson (Nano / Orin)",
           highlight: true,
           desc: {
-            en: "Containerization for AI/ML pipelines & Computer Vision services, Dockerfile, multi-stage builds, Docker Compose, guaranteeing reproducible environments across dev and production.",
-            vi: "Container hóa ứng dụng AI/ML & Computer Vision pipelines, xây dựng Dockerfile, multi-stage build, Docker Compose, đảm bảo môi trường đồng nhất và ổn định từ dev đến production.",
+            en: "Deploying computer vision models on Jetson Nano and Jetson Orin for real-time inference at the edge, close to the camera and without cloud dependency.",
+            vi: "Triển khai mô hình thị giác máy tính trên Jetson Nano và Jetson Orin, suy luận thời gian thực ngay tại thiết bị, không phụ thuộc cloud.",
           },
         },
         {
-          name: "GitHub Workflow (GitHub Actions)",
+          name: "ONNX → TensorRT",
           highlight: true,
           desc: {
-            en: "Setting up CI/CD automation pipelines, automated test runs, code linting, automated packaging, model versioning, and continuous delivery workflows.",
-            vi: "Thiết lập CI/CD automation pipeline với GitHub Actions, tự động chạy test, kiểm tra chất lượng mã nguồn, đóng gói bản phát hành và tự động hóa quy trình phân phối dự án.",
-          },
-        },
-        {
-          name: "Power Apps",
-          highlight: true,
-          desc: {
-            en: "Rapid low-code application development for enterprise operations, custom business forms, workflow interfaces, and connecting seamlessly with databases & AI APIs.",
-            vi: "Xây dựng ứng dụng doanh nghiệp low-code tùy biến nhanh, giao diện người dùng trực quan, số hóa biểu mẫu và tích hợp liền mạch với cơ sở dữ liệu & API AI.",
-          },
-        },
-        {
-          name: "Power Automate",
-          highlight: true,
-          desc: {
-            en: "End-to-end Robotic Process Automation (RPA), automating cross-platform business workflows (SharePoint, Teams, Outlook, REST APIs), scheduled data synchronization.",
-            vi: "Tự động hóa quy trình nghiệp vụ (RPA), kết nối quy trình liên thông giữa SharePoint, Teams, Outlook, REST APIs, đồng bộ dữ liệu và gửi thông báo tự động theo lịch.",
-          },
-        },
-        {
-          name: "Git & Source Control",
-          desc: {
-            en: "GitFlow branching strategy, commit conventions, code reviews, collaboration on GitHub/GitLab.",
-            vi: "Chiến lược phân nhánh GitFlow, quy chuẩn commit, code review, làm việc nhóm chuyên nghiệp trên GitHub/GitLab.",
+            en: "Exporting PyTorch models to ONNX and building TensorRT engines to cut latency and raise FPS on edge GPUs.",
+            vi: "Chuyển mô hình PyTorch sang ONNX và build TensorRT engine để giảm độ trễ, tăng FPS trên GPU của thiết bị edge.",
           },
         },
       ],
     },
     {
-      id: "programming",
-      category: { en: "Programming Languages & Backend", vi: "Ngôn ngữ lập trình & Backend" },
+      id: "llm",
+      category: { en: "LLM & Generative AI", vi: "LLM & Generative AI" },
+      icon: "fas fa-comments",
+      badges: [
+        { label: "Qwen_(local)",  logo: "alibabacloud",       color: "FF6A00" },
+        { label: "Gemini_API",    logo: "googlegemini",       color: "8E75B2" },
+        { label: "FastAPI",       logo: "fastapi",            color: "009688" },
+      ],
+      items: [
+        {
+          name: "Local LLM (Qwen)",
+          highlight: true,
+          desc: {
+            en: "Running open-source LLMs on-premise so factory data never leaves the internal network; built a chatbot that answers OEE (Overall Equipment Effectiveness) questions from production data.",
+            vi: "Chạy LLM mã nguồn mở on-premise để dữ liệu nhà máy không ra ngoài mạng nội bộ; xây dựng chatbot trả lời câu hỏi về chỉ số OEE từ dữ liệu sản xuất.",
+          },
+        },
+        {
+          name: "LLM API Integration (Gemini)",
+          desc: {
+            en: "Prompt design and integrating Gemini API into applications, with FastAPI services exposing AI features to other systems.",
+            vi: "Thiết kế prompt và tích hợp Gemini API vào ứng dụng, xây dựng service FastAPI để cung cấp tính năng AI cho các hệ thống khác.",
+          },
+        },
+      ],
+    },
+    {
+      id: "backend",
+      category: { en: "Backend, MLOps & Automation", vi: "Backend, MLOps & Tự động hóa" },
       icon: "fas fa-code",
       badges: [
-        { label: "Python",      logo: "python",              color: "3776AB" },
-        { label: "C#",          logo: "dotnet",              color: "512BD4" },
-        { label: "C++",         logo: "cplusplus",           color: "00599C" },
-        { label: "Flask",       logo: "flask",               color: "ffffff" },
-        { label: "SQL_Server",  logo: "microsoftsqlserver",  color: "CC2927" },
-        { label: "MySQL",       logo: "mysql",               color: "4479A1" },
-        { label: "HTML5",       logo: "html5",               color: "E34F26" },
-        { label: "CSS3",        logo: "css3",                color: "1572B6" },
+        { label: "Python",          logo: "python",              color: "3776AB" },
+        { label: "FastAPI",         logo: "fastapi",             color: "009688" },
+        { label: "Flask",           logo: "flask",               color: "ffffff" },
+        { label: "C#",              logo: "dotnet",              color: "512BD4" },
+        { label: "C++",             logo: "cplusplus",           color: "00599C" },
+        { label: "SQL_Server",      logo: "microsoftsqlserver",  color: "CC2927" },
+        { label: "MySQL",           logo: "mysql",               color: "4479A1" },
+        { label: "GitHub_Actions",  logo: "githubactions",       color: "2088FF" },
+        { label: "Git",             logo: "git",                 color: "F05032" },
+        { label: "Power_Automate",  logo: "microsoft",           color: "0066FF" },
       ],
       items: [
         {
-          name: "Python",
+          name: "Python & FastAPI / Flask",
+          highlight: true,
           desc: {
-            en: "Data engineering, building & training ML/DL models, OpenCV computer vision pipelines, backend API scripting, PyPI package distribution.",
-            vi: "Kỹ thuật dữ liệu, xây dựng và huấn luyện mô hình ML/DL, pipeline thị giác máy tính OpenCV, API backend và đóng gói package PyPI.",
+            en: "REST APIs for serving model inference, data pipelines, and packaging tools on PyPI.",
+            vi: "Xây dựng REST API phục vụ suy luận mô hình, pipeline dữ liệu và đóng gói công cụ lên PyPI.",
           },
         },
         {
-          name: "C# (.Net)",
+          name: "Docker & CI/CD (GitHub Actions)",
+          desc: {
+            en: "Containerizing AI services (Dockerfile, multi-stage builds, Docker Compose) and automating test, lint and release workflows.",
+            vi: "Container hóa service AI (Dockerfile, multi-stage build, Docker Compose) và tự động hóa test, lint, đóng gói phát hành.",
+          },
+        },
+        {
+          name: "C# (.NET)",
           desc: {
             en: "Industrial desktop applications (WinForms/WPF), camera SDK integration, robot communication via serial/TCP/IP.",
-            vi: "Phần mềm desktop công nghiệp (WinForms/WPF), tích hợp camera SDK, giao tiếp robot qua giao thức serial/TCP/IP.",
-          },
-        },
-        {
-          name: "Flask & RESTful APIs",
-          desc: {
-            en: "Designing lightweight, high-performance APIs for serving AI/ML inference requests, JSON handling, security, and integration.",
-            vi: "Thiết kế API nhẹ, hiệu năng cao phục vụ suy luận mô hình AI/ML, xử lý request JSON, bảo mật và kết nối hệ thống.",
+            vi: "Phần mềm desktop công nghiệp (WinForms/WPF), tích hợp camera SDK, giao tiếp robot qua serial/TCP/IP.",
           },
         },
         {
           name: "Database (SQL Server, MySQL)",
           desc: {
-            en: "Schema design, relational database queries, performance indexing, data logging for industrial inspection systems.",
-            vi: "Thiết kế lược đồ, truy vấn SQL quan hệ, tối ưu chỉ mục và lưu trữ log dữ liệu cho các hệ thống kiểm tra công nghiệp.",
+            en: "Schema design, query tuning and data logging for industrial inspection systems.",
+            vi: "Thiết kế lược đồ, tối ưu truy vấn và lưu log dữ liệu cho hệ thống kiểm tra công nghiệp.",
+          },
+        },
+        {
+          name: "Power Apps & Power Automate",
+          desc: {
+            en: "Low-code business apps and workflow automation across SharePoint, Teams, Outlook and REST APIs.",
+            vi: "Ứng dụng low-code và tự động hóa quy trình liên thông SharePoint, Teams, Outlook và REST API.",
           },
         },
       ],
@@ -250,6 +277,28 @@ var RESUME_DATA = {
   /* ── DỰ ÁN ── */
   projects: [
     {
+      title:   { en: "License Plate Recognition on NVIDIA Jetson", vi: "Nhận dạng biển số xe trên NVIDIA Jetson" },
+      tech:    "PyTorch · YOLO · OCR · ONNX · TensorRT · Jetson Orin",
+      context: { en: "i-Soft · Production", vi: "i-Soft · Thực tế" },
+      featured: true,
+      links:   [],
+      desc: {
+        en: "End-to-end ANPR pipeline: YOLO detects plates, an OCR model reads the characters, and the models are converted to TensorRT to run in real time on Jetson Nano / Orin at the camera site.",
+        vi: "Pipeline nhận dạng biển số hoàn chỉnh: YOLO phát hiện biển số, mô hình OCR đọc ký tự, sau đó chuyển sang TensorRT để chạy thời gian thực trên Jetson Nano / Orin ngay tại vị trí camera.",
+      },
+    },
+    {
+      title:   { en: "On-premise LLM Chatbot for OEE Analytics", vi: "Chatbot LLM nội bộ phân tích OEE" },
+      tech:    "Qwen (local LLM) · FastAPI · SQL",
+      context: { en: "i-Soft · Production", vi: "i-Soft · Thực tế" },
+      featured: true,
+      links:   [],
+      desc: {
+        en: "Chatbot running a local Qwen model that lets factory staff ask about OEE (availability, performance, quality) in natural language. Data stays inside the company network.",
+        vi: "Chatbot chạy mô hình Qwen local, cho phép nhân viên nhà máy hỏi về OEE (availability, performance, quality) bằng ngôn ngữ tự nhiên. Dữ liệu không rời khỏi mạng nội bộ công ty.",
+      },
+    },
+    {
       title:  { en: "Camera Calibration",     vi: "Camera Calibration" },
       tech:   "OpenCV · Python · PyPI",
       date:   { en: "April 2024 — June 2024", vi: "04/2024 — 06/2024" },
@@ -314,19 +363,6 @@ var RESUME_DATA = {
         vi: "Ứng dụng ước tính tư thế người theo thời gian thực sử dụng MediaPipe và CNN MobileNet. Hỗ trợ nhận diện bàn tay, khuôn mặt và lưới khuôn mặt qua thư viện cvzone.",
       },
     },
-    {
-      title:  { en: "The Band — Static Website", vi: "The Band — Website tĩnh" },
-      tech:   "HTML · CSS · JavaScript",
-      date:   { en: "June 2022 — July 2022", vi: "06/2022 — 07/2022" },
-      links: [
-        { label: { en: "Source Code", vi: "Source Code" }, icon: "fab fa-github",          url: "https://github.com/nguyenquangtung/UI-Web-The-Band.git" },
-        { label: { en: "Live Demo",   vi: "Live Demo"   }, icon: "fas fa-external-link-alt", url: "https://ui-web-the-band.vercel.app/" },
-      ],
-      desc: {
-        en: "A responsive static website for a music band, built with plain HTML, CSS, and JavaScript.",
-        vi: "Website tĩnh responsive cho một ban nhạc, được xây dựng bằng HTML, CSS và JavaScript thuần.",
-      },
-    },
   ],
 
   /* ── KINH NGHIỆM ── */
@@ -337,21 +373,28 @@ var RESUME_DATA = {
       position: { en: "AI / Computer Vision Engineer",        vi: "AI / Computer Vision Engineer" },
       date:     { en: "02/2024 — Present",                    vi: "02/2024 — Hiện tại" },
       evalUrl:  null,
+      tech:     "PyTorch · YOLO · OCR · ONNX · TensorRT · Jetson Nano/Orin · Qwen · Gemini API · FastAPI · Docker",
       desc: {
-        en: "Full-time AI/CV Engineer. Working on computer vision projects, R&D tasks, and integrating AI solutions into production systems.",
-        vi: "Kỹ sư AI/CV toàn thời gian. Tham gia các dự án thị giác máy tính, R&D và tích hợp giải pháp AI vào hệ thống thực tế.",
+        en: "Full-time AI Engineer building computer vision and LLM solutions that run in production, from model training to deployment on edge devices.",
+        vi: "AI Engineer toàn thời gian, phát triển giải pháp thị giác máy tính và LLM chạy thực tế, từ huấn luyện mô hình đến triển khai trên thiết bị edge.",
       },
       items: [
         {
           text: {
-            en: "Develop computer vision pipelines for inspection, detection, and automation use cases.",
-            vi: "Phát triển pipeline thị giác máy tính cho các bài toán kiểm tra, phát hiện và tự động hóa.",
+            en: "Built license plate recognition (detection + OCR) and deployed it on NVIDIA Jetson Nano / Orin, converting models via ONNX to TensorRT for real-time inference.",
+            vi: "Xây dựng hệ thống nhận dạng biển số xe (phát hiện + OCR) và triển khai trên NVIDIA Jetson Nano / Orin, chuyển mô hình qua ONNX sang TensorRT để suy luận thời gian thực.",
           },
         },
         {
           text: {
-            en: "Research, evaluate, and integrate AI models into practical production workflows.",
-            vi: "Nghiên cứu, đánh giá và tích hợp mô hình AI vào quy trình vận hành thực tế.",
+            en: "Developed an on-premise chatbot on a local Qwen LLM that answers OEE questions from factory production data, keeping all data inside the internal network.",
+            vi: "Phát triển chatbot nội bộ dùng LLM Qwen chạy local, trả lời câu hỏi về OEE từ dữ liệu sản xuất của nhà máy, toàn bộ dữ liệu nằm trong mạng nội bộ.",
+          },
+        },
+        {
+          text: {
+            en: "Trained and fine-tuned PyTorch/YOLO models for inspection and detection, and exposed AI features through FastAPI services and Gemini API integrations.",
+            vi: "Huấn luyện và fine-tune mô hình PyTorch/YOLO cho bài toán kiểm tra, phát hiện; cung cấp tính năng AI qua service FastAPI và tích hợp Gemini API.",
           },
         },
       ],
@@ -454,7 +497,7 @@ var RESUME_DATA = {
   /* ── CUỘC THI ── */
   competitions: [
     {
-      title: "🏆 AWS DeepRacer League 2023",
+      title: "AWS DeepRacer League 2023",
       desc: {
         en: "<strong>Top 2</strong> Vietnam Student Ranking &nbsp;·&nbsp; <strong>Top 10%</strong> Asia Pacific Ranking",
         vi: "<strong>Top 2</strong> Bảng xếp hạng sinh viên Việt Nam &nbsp;·&nbsp; <strong>Top 10%</strong> Bảng xếp hạng Châu Á - Thái Bình Dương",

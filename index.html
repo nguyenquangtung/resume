@@ -4,9 +4,49 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Tung Nguyen - AI/ML Engineer Portfolio" />
+  <meta name="description" content="Nguyen Quang Tung - AI Engineer specializing in Computer Vision, Edge AI (NVIDIA Jetson, TensorRT) and LLM applications. Based in Ho Chi Minh City." />
   <meta name="author" content="Nguyen Quang Tung" />
-  <title>TUNG NGUYEN | AI/ML Engineer</title>
+  <title>Tung Nguyen | AI Engineer · Computer Vision & Edge AI</title>
+  <link rel="canonical" href="https://quangtung.io.vn/" />
+  <link rel="alternate" hreflang="en" href="https://quangtung.io.vn/" />
+  <link rel="alternate" hreflang="vi" href="https://quangtung.io.vn/index_vnm.html" />
+  <meta name="theme-color" content="#0b0f19" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Tung Nguyen | AI Engineer · Computer Vision & Edge AI" />
+  <meta property="og:description" content="Nguyen Quang Tung - AI Engineer specializing in Computer Vision, Edge AI (NVIDIA Jetson, TensorRT) and LLM applications. Based in Ho Chi Minh City." />
+  <meta property="og:url" content="https://quangtung.io.vn/" />
+  <meta property="og:image" content="https://quangtung.io.vn/img/avatar-square2.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nguyen Quang Tung",
+    "jobTitle": "AI Engineer",
+    "url": "https://quangtung.io.vn/",
+    "image": "https://quangtung.io.vn/img/avatar-square2.jpg",
+    "address": { "@type": "PostalAddress", "addressLocality": "Ho Chi Minh City", "addressCountry": "VN" },
+    "alumniOf": "Ho Chi Minh City University of Technical Education",
+    "knowsAbout": ["Computer Vision", "Edge AI", "NVIDIA Jetson", "TensorRT", "PyTorch", "YOLO", "OCR", "Large Language Models", "FastAPI"],
+    "sameAs": [
+      "https://github.com/nguyenquangtung",
+      "https://gitlab.com/TungNguyen73",
+      "https://www.linkedin.com/in/tungnguyen73/",
+      "https://www.youtube.com/@tungquangnguyen731"
+    ]
+  }
+  </script>
+
+  <!-- Apply saved theme before first paint (default: dark) to avoid a light flash -->
+  <script>
+    try { if (localStorage.getItem("resumeTheme") !== "light") document.documentElement.setAttribute("data-theme", "dark"); }
+    catch (e) { document.documentElement.setAttribute("data-theme", "dark"); }
+  </script>
 
   <!-- Favicon -->
   <link href="img/avatar-square2.jpg" rel="icon" />
@@ -21,10 +61,11 @@
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
 
   <!-- Custom styles -->
-  <link href="css/resume.css" rel="stylesheet" />
+  <link href="css/resume.css?v=20261110b" rel="stylesheet" />
 </head>
 
 <body id="page-top">
+  <a class="skip-link" href="#about">Skip to content</a>
 
   <!-- ===================== SIDEBAR NAV ===================== -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
@@ -47,7 +88,7 @@
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-        <li class="nav-item"><a class="nav-link" target="_blank" data-role="download-nav"
+        <li class="nav-item"><a class="nav-link" target="_blank" rel="noopener noreferrer" data-role="download-nav"
           href="https://drive.google.com/file/d/1ivL0z7RnDSmPI-gvFlnEMf_Y-nnqRxe0/view?usp=sharing">
           Download CV</a></li>
       </ul>
@@ -58,7 +99,7 @@
     </div>
   </nav>
 
-  <div class="container-fluid p-0">
+  <main class="container-fluid p-0" id="main-content">
 
     <!-- ===================== ABOUT ===================== -->
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
@@ -93,15 +134,16 @@
       <div class="w-100" id="education-content"></div>
     </section>
 
-  </div>
+  </main>
 
   <!-- Scripts -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/resume.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/render.js"></script>
+  <script src="js/resume.js?v=20261110b"></script>
+  <script src="js/data.js?v=20261110b"></script>
+  <script src="js/deck.js?v=20261110b"></script>
+  <script src="js/render.js?v=20261110b"></script>
   <script>
     if (typeof RESUME_DATA === "undefined") {
       document.body.innerHTML = '<div style="color:red;padding:2rem;font-size:1.2rem;">⚠️ ERROR: data.js failed to load. Open this page via a local server (e.g. Live Server), not file://</div>' + document.body.innerHTML;
@@ -115,6 +157,7 @@
       var isOpen = items[index].style.display === 'block';
       items[index].style.display = isOpen ? 'none' : 'block';
       arrows[index].classList.toggle('open', !isOpen);
+      arrows[index].setAttribute('aria-expanded', String(!isOpen));
     }
   </script>
 </body>
