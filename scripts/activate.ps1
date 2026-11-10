@@ -1,4 +1,4 @@
-param (
+﻿param (
     [string[]]$Skills = @(),
     [string[]]$VaultPaths = @(
         "T:\Skills",

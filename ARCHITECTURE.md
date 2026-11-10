@@ -89,7 +89,7 @@ Sử dụng script tự động hóa được tích hợp sẵn:
 Script sẽ thực hiện tuần tự:
 1. Git add & commit với message.
 2. Push lên nhánh `main` để GitHub Pages cập nhật.
-3. Tự động đồng bộ sơ đồ tri thức `graphify . --update`.
+3. Tự động đồng bộ sơ đồ tri thức `graphify update .`.
 4. Nhắc nhở cập nhật `AGENT_STATE.md` và `ARCHITECTURE.md`.
 
 ---

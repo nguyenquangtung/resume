@@ -50,7 +50,7 @@ Khi hoàn thành công việc và cần đẩy code:
    ```
 2. Script sẽ tự động:
    - Commit & push lên nhánh `main` (kích hoạt GitHub Pages).
-   - Tự động chạy `graphify . --update` cập nhật sơ đồ tri thức mã nguồn.
+   - Tự động chạy `graphify update .` cập nhật sơ đồ tri thức mã nguồn.
 3. Cập nhật lại `AGENT_STATE.md` (đánh dấu hoàn thành và thêm 1 dòng vào **Changelog**).
 4. Nếu có thay đổi luồng kỹ thuật hoặc kiến trúc, cập nhật `ARCHITECTURE.md`.
 

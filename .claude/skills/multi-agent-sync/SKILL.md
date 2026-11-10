@@ -107,7 +107,7 @@ if ($LASTEXITCODE -eq 0) {
     # 4. Tu dong chay graphify update neu push thanh cong
     if (Get-Command graphify -ErrorAction SilentlyContinue) {
         Write-Host "Dang cap nhat knowledge graph..." -ForegroundColor Cyan
-        graphify . --update --code-only
+        graphify update . --code-only
         Write-Host "Cap nhat Graphify hoan tat." -ForegroundColor Green
     }
 
